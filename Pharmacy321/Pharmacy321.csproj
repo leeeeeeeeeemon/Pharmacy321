@@ -8,4 +8,10 @@
     <UseWPF>true</UseWPF>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Folder Include="Pages\" />
+    <Folder Include="img\" />
+    <Folder Include="Data\" />
+  </ItemGroup>
+
 </Project>

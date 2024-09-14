@@ -1,4 +1,5 @@
-﻿using System.Text;
+﻿using Pharmacy321.Windows;
+using System.Text;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -11,14 +12,20 @@ using System.Windows.Shapes;
 
 namespace Pharmacy321
 {
-    /// <summary>
-    /// Interaction logic for MainWindow.xaml
-    /// </summary>
     public partial class MainWindow : Window
     {
         public MainWindow()
         {
             InitializeComponent();
+        }
+
+        private void Login_Btn_Click(object sender, RoutedEventArgs e)
+        {
+            if (Login_TB.Text == "1" && Password_PB.Password == "1")
+            {
+                new AdminMain().Show();
+                this.Close();
+            }
         }
     }
 }
