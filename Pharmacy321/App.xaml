@@ -4,6 +4,83 @@
              xmlns:local="clr-namespace:Pharmacy321"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-         
-    </Application.Resources>
+		<ResourceDictionary>
+			<Style x:Key="MyButtonStyle" TargetType="Button">
+				<Setter Property="FontFamily" Value="Verdana"/>
+				<Setter Property="Background">
+					<Setter.Value>
+						<LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+							<GradientStop Color="#1E90FF" Offset="0.0"/>
+							<GradientStop Color="#00BFFF" Offset="1.0"/>
+						</LinearGradientBrush>
+					</Setter.Value>
+				</Setter>
+				<Setter Property="Foreground" Value="White"/>
+				<Setter Property="Margin" Value="10"/>
+				<Setter Property="Padding" Value="10,5"/>
+				<Setter Property="BorderBrush" Value="#1E90FF"/>
+				<Setter Property="BorderThickness" Value="2"/>
+				
+				<Setter Property="Effect">
+					<Setter.Value>
+						<DropShadowEffect ShadowDepth="2" Color="Gray" BlurRadius="5"/>
+					</Setter.Value>
+				</Setter>
+				<Setter Property="Cursor" Value="Hand"/>
+				<Style.Triggers>
+					<Trigger Property="IsMouseOver" Value="True">
+						<Setter Property="Background" Value="#00BFFF"/>
+						<Setter Property="Foreground" Value="White"/>
+					</Trigger>
+				</Style.Triggers>
+			</Style>
+
+		
+			<Style x:Key="MyComboBoxStyle" TargetType="ComboBox">
+				<Setter Property="FontFamily" Value="Verdana"/>
+				<Setter Property="Margin" Value="10"/>
+				<Setter Property="Padding" Value="5"/>
+				<Setter Property="Background" Value="White"/>
+				<Setter Property="Foreground" Value="Black"/>
+				<Setter Property="BorderBrush" Value="#1E90FF"/>
+				<Setter Property="BorderThickness" Value="2"/>
+				<Setter Property="Effect">
+					<Setter.Value>
+						<DropShadowEffect ShadowDepth="2" Color="Gray" BlurRadius="5"/>
+					</Setter.Value>
+				</Setter>
+				<Style.Triggers>
+					<Trigger Property="IsMouseOver" Value="True">
+						<Setter Property="Background" Value="#F0F8FF"/>
+					</Trigger>
+				</Style.Triggers>
+			</Style>
+
+			
+			<Style x:Key="MyPasswordBoxStyle" TargetType="PasswordBox">
+				<Setter Property="FontFamily" Value="Verdana"/>
+				<Setter Property="Margin" Value="10"/>
+				<Setter Property="Padding" Value="5"/>
+				<Setter Property="Background" Value="White"/>
+				<Setter Property="Foreground" Value="Black"/>
+				<Setter Property="BorderBrush" Value="#1E90FF"/>
+				<Setter Property="BorderThickness" Value="2"/>
+			
+				<Setter Property="Effect">
+					<Setter.Value>
+						<DropShadowEffect ShadowDepth="2" Color="Gray" BlurRadius="5"/>
+					</Setter.Value>
+				</Setter>
+			</Style>
+
+			<Style x:Key="MyLabelStyle" TargetType="Label">
+				<Setter Property="FontFamily" Value="Verdana"/>
+				<Setter Property="FontSize" Value="20"/>
+				<Setter Property="Foreground" Value="#9E90FF"/>
+				<Setter Property="HorizontalAlignment" Value="Center"/>
+				<Setter Property="Margin" Value="10"/>
+			</Style>
+
+		</ResourceDictionary>
+	</Application.Resources>
 </Application>

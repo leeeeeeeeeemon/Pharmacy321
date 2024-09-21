@@ -5,8 +5,44 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Pharmacy321"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        <Label Content="Pharmacy"/>
-    </Grid>
+        Title="MainWindow" Height="250" Width="350">
+	<Grid>
+		<Grid.RowDefinitions>
+			<RowDefinition Height="Auto"/>
+			<RowDefinition Height="*" />
+			<RowDefinition Height="*" />
+			<RowDefinition Height="Auto"/>
+		</Grid.RowDefinitions>
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition Width="Auto"/>
+			<ColumnDefinition Width="*" />
+			<ColumnDefinition Width="Auto"/>
+		</Grid.ColumnDefinitions>
+		
+		<Label Content="Авторизация" 
+               Style="{StaticResource MyLabelStyle}" 
+               Grid.Row="0" 
+               Grid.Column="1"
+               HorizontalAlignment="Center"/>
+
+		<ComboBox x:Name="RoleComboBox" 
+                  Style="{StaticResource MyComboBoxStyle}" 
+                  Grid.Row="1" 
+                  Grid.Column="1"
+                  ItemsSource="{Binding Roles}" 
+                  SelectedIndex="0"/>
+
+		<PasswordBox x:Name="PasswordBox" 
+                     Style="{StaticResource MyPasswordBoxStyle}" 
+                     Grid.Row="2" 
+                     Grid.Column="1"/>
+
+		<Button Content="Войти" 
+                Style="{StaticResource MyButtonStyle}" 
+                Grid.Row="3" 
+                Grid.Column="1"
+                HorizontalAlignment="Center"
+                Width="150"
+                Click="LoginButton_Click"/>
+	</Grid>
 </Window>
