@@ -4,6 +4,32 @@
              xmlns:local="clr-namespace:Pharmacy321"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-         
+        <ResourceDictionary>
+            <Style x:Key="Buttons" TargetType="Button">
+                <Setter Property="FontFamily" Value="Verdana"/>
+                <Setter Property="Background" Value="HotPink"/>
+                <Setter Property="Foreground" Value="White"/>
+                <Setter Property="Margin" Value="8"/>
+                <Setter Property="Padding" Value="4"/>
+
+            </Style>
+            <Style x:Key="TextBoxS" TargetType="TextBox">
+                <Setter Property="FontFamily" Value="Times New Roman"/>
+                <Setter Property="Background" Value="Gainsboro"/>
+                <Setter Property="Foreground" Value="White"/>
+                <Setter Property="Margin" Value="8"/>
+                <Setter Property="Padding" Value="4"/>
+            </Style>
+            <Style x:Key="Grids" TargetType="Grid">
+                <Setter Property="Background" Value="LightGray"/>
+                <Setter Property="Margin" Value="8"/>
+            </Style>
+            <Style x:Key="Borderss" TargetType="Border">
+                <Setter Property="Background" Value="Honeydew"/>
+                <Setter Property="Margin" Value="8"/>
+                <Setter Property="CornerRadius" Value="10"></Setter>
+            </Style>
+
+        </ResourceDictionary>
     </Application.Resources>
 </Application>

@@ -9,6 +9,7 @@ namespace Pharmacy321
     /// </summary>
     public partial class App : Application
     {
+
     }
 
 }
