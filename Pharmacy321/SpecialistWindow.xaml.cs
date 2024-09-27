@@ -81,10 +81,10 @@ namespace Pharmacy321
 
         private void LoadClientsGrid()
         {
-            
-            var clients = database.GetClients(); 
-            ClientsDataGrid.ItemsSource = clients.DefaultView; 
+            var clients = database.GetClients();
+            ClientsDataGrid.ItemsSource = clients.DefaultView;
         }
+
         private void ClientsTextBox_TextChanged(object sender, TextChangedEventArgs e)
         {
             string input = ClientsTextBox.Text.ToLower(); 

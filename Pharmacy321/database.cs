@@ -23,15 +23,20 @@ namespace Pharmacy321
 
         public DataTable GetClients()
         {
-            using (SqlConnection conn = new SqlConnection(connectionString))
+            DataTable clientsTable = new DataTable();
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
             {
-                conn.Open();
-                string query = "SELECT ID_Klient, FName, Name FROM Klient";
-                SqlDataAdapter adapter = new SqlDataAdapter(query, conn);
-                DataTable dataTable = new DataTable();
-                adapter.Fill(dataTable);
-                return dataTable;
+                connection.Open();
+                string query = "SELECT ID_Klient, FName, Name, Othestvo, Pochta, Telefon, Skidka FROM Klient"; // Убедитесь, что вы выбираете все необходимые поля
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    SqlDataAdapter adapter = new SqlDataAdapter(command);
+                    adapter.Fill(clientsTable);
+                }
             }
+
+            return clientsTable;
         }
         public DataTable GetSpecialists()
         {
