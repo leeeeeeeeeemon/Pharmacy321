@@ -78,7 +78,7 @@ namespace Pharmacy321
 
         private bool CheckAdminPassword(string password)
         {
-            return password == "admin_password";
+            return password == "admin";
         }
 
         private bool CheckEmployeePassword(string password)

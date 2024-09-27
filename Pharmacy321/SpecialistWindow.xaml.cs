@@ -31,7 +31,7 @@ namespace Pharmacy321
         }
 
 
-        private void LoadSpecialists()
+        protected void LoadSpecialists()
         {
     
             DataTable specialists = database.GetSpecialists();
@@ -79,11 +79,11 @@ namespace Pharmacy321
             MessageBox.Show("Запись на прием выполнена успешно!");
         }
 
-        private void LoadClientsGrid()
-        {
-            var clients = database.GetClients();
-            ClientsDataGrid.ItemsSource = clients.DefaultView;
-        }
+      private void LoadClientsGrid()
+{
+    var clients = database.GetClients(); 
+    ClientsDataGrid.ItemsSource = clients.DefaultView; 
+}
 
         private void ClientsTextBox_TextChanged(object sender, TextChangedEventArgs e)
         {

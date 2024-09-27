@@ -79,6 +79,54 @@ namespace Pharmacy321
                 command.ExecuteNonQuery();
             }
         }
+        public DataTable GetEmployees()
+        {
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                SqlCommand command = new SqlCommand("SELECT * FROM Sotrudnic", connection);
+                SqlDataAdapter adapter = new SqlDataAdapter(command);
+                DataTable employees = new DataTable();
+                adapter.Fill(employees);
+                return employees;
+            }
+        }
 
+        public DataTable GetContracts()
+        {
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                SqlCommand command = new SqlCommand("SELECT * FROM Dogovor", connection);
+                SqlDataAdapter adapter = new SqlDataAdapter(command);
+                DataTable contracts = new DataTable();
+                adapter.Fill(contracts);
+                return contracts;
+            }
+        }
+
+        public void AddEmployee(string fName, string name, string othestvo, string doljnost)
+        {
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                SqlCommand command = new SqlCommand("INSERT INTO Sotrudnic (FName, Name, Othestvo, Doljnost) VALUES (@FName, @Name, @Othestvo, @Doljnost)", connection);
+                command.Parameters.AddWithValue("@FName", fName);
+                command.Parameters.AddWithValue("@Name", name);
+                command.Parameters.AddWithValue("@Othestvo", othestvo);
+                command.Parameters.AddWithValue("@Doljnost", doljnost);
+                connection.Open();
+                command.ExecuteNonQuery();
+            }
+        }
+
+        public void CreateContract(int clientId, string details)
+        {
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                SqlCommand command = new SqlCommand("INSERT INTO Dogovor (ClientID, Details) VALUES (@ClientID, @Details)", connection);
+                command.Parameters.AddWithValue("@ClientID", clientId);
+                command.Parameters.AddWithValue("@Details", details);
+                connection.Open();
+                command.ExecuteNonQuery();
+            }
+        }
     }
 }
