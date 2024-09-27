@@ -3,8 +3,11 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:local="clr-namespace:Pharmacy321"
              StartupUri="MainWindow.xaml">
+	
     <Application.Resources>
+		
 		<ResourceDictionary>
+			
 			<Style x:Key="MyButtonStyle" TargetType="Button">
 				<Setter Property="FontFamily" Value="Verdana"/>
 				<Setter Property="Background">
