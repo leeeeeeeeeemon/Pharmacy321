@@ -30,17 +30,18 @@ namespace Pharmacy321
             LoadClientsGrid();
         }
 
-        //private void LoadClients()
-        //{
-        //    // Загрузка клиентов в ComboBox
-        //    ClientsComboBox.ItemsSource = database.GetClients().DefaultView; // Убедитесь, что это возвращает нужные данные
-        //}
 
         private void LoadSpecialists()
         {
-            // Загрузка специалистов в ComboBox
-            // Например, если у вас есть таблица специалистов, загрузите их оттуда
-            SpecialistsComboBox.ItemsSource = new List<string> { "Специалист 1", "Специалист 2", "Специалист 3" }; // Замените на реальных специалистов
+            // Получаем данные специалистов из базы данных
+            DataTable specialists = database.GetSpecialists();
+
+            // Устанавливаем ItemsSource для ComboBox
+            SpecialistsComboBox.ItemsSource = specialists.DefaultView;
+
+            // Указываем, какие поля отображать в ComboBox
+            SpecialistsComboBox.DisplayMemberPath = "FullNameAndPosition"; // Поле, которое содержит объединенные фамилию и должность
+            SpecialistsComboBox.SelectedValuePath = "ID_Sotrudnic"; // ID специалиста, если нужно
         }
 
         private void AddClientButton_Click(object sender, RoutedEventArgs e)
