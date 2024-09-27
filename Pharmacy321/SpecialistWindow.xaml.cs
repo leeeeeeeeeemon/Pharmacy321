@@ -33,20 +33,20 @@ namespace Pharmacy321
 
         private void LoadSpecialists()
         {
-            // Получаем данные специалистов из базы данных
+    
             DataTable specialists = database.GetSpecialists();
 
-            // Устанавливаем ItemsSource для ComboBox
+
             SpecialistsComboBox.ItemsSource = specialists.DefaultView;
 
-            // Указываем, какие поля отображать в ComboBox
-            SpecialistsComboBox.DisplayMemberPath = "FullNameAndPosition"; // Поле, которое содержит объединенные фамилию и должность
-            SpecialistsComboBox.SelectedValuePath = "ID_Sotrudnic"; // ID специалиста, если нужно
+
+            SpecialistsComboBox.DisplayMemberPath = "FullNameAndPosition"; 
+            SpecialistsComboBox.SelectedValuePath = "ID_Sotrudnic"; 
         }
 
         private void AddClientButton_Click(object sender, RoutedEventArgs e)
         {
-            // Считывание данных из текстовых полей
+
             string FName = FNameTextBox.Text;
             string Name = NameTextBox.Text;
             string Othestvo = OthestvoTextBox.Text;
@@ -54,7 +54,7 @@ namespace Pharmacy321
             string Telefon = TelefonTextBox.Text;
             string Skidka = SkidkaTextBox.Text;
 
-            // Добавление клиента в базу данных
+
             database.AddClient(FName, Name, Othestvo, Pochta, Telefon, Skidka);
             MessageBox.Show("Клиент добавлен успешно!");
 
@@ -69,31 +69,31 @@ namespace Pharmacy321
 
         private void RecordAppointmentButton_Click(object sender, RoutedEventArgs e)
         {
-            // Логика записи клиента на прием
+           
             string selectedClient = ClientsTextBox.Text.ToLower();
             string selectedSpecialist = SpecialistsComboBox.SelectedItem.ToString();
 
-            // Здесь должна быть логика для записи на прием в базу данных
+            
             database.RecordAppointment(selectedClient, selectedSpecialist);
             MessageBox.Show("Запись на прием выполнена успешно!");
         }
 
         private void LoadClientsGrid()
         {
-            // Загрузка клиентов в DataGrid
-            var clients = database.GetClients(); // Убедитесь, что этот метод возвращает нужные данные
-            ClientsDataGrid.ItemsSource = clients.DefaultView; // Здесь нет ошибки, так как метод GetClients() используется из объекта database
+            
+            var clients = database.GetClients(); 
+            ClientsDataGrid.ItemsSource = clients.DefaultView; 
         }
         private void ClientsTextBox_TextChanged(object sender, TextChangedEventArgs e)
         {
-            string input = ClientsTextBox.Text.ToLower(); // Приведение к нижнему регистру для простоты поиска
+            string input = ClientsTextBox.Text.ToLower(); 
             if (string.IsNullOrWhiteSpace(input))
             {
                 ClientsListBox.Visibility = Visibility.Collapsed;
                 return;
             }
 
-            DataTable clients = database.GetClients(); // Получаем всех клиентов из базы данных
+            DataTable clients = database.GetClients();
             var filteredClients = clients.AsEnumerable()
                 .Where(row => row.Field<string>("FName").ToLower().StartsWith(input) || row.Field<string>("Name").ToLower().StartsWith(input))
                 .Select(row => new
@@ -121,7 +121,7 @@ namespace Pharmacy321
             if (ClientsListBox.SelectedItem != null)
             {
                 var selectedClient = ClientsListBox.SelectedItem;
-                ClientsTextBox.Text = (selectedClient as dynamic).FullName; // Заполнение текстового поля выбранным клиентом
+                ClientsTextBox.Text = (selectedClient as dynamic).FullName; 
                 ClientsListBox.Visibility = Visibility.Collapsed;
             }
         }
