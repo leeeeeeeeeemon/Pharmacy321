@@ -15,6 +15,14 @@
 				<Setter Property="FontSize" Value="14" />
 				<Setter Property="Margin" Value="10" />
 			</Style>
+			<Style x:Key="MyListBoxStyle" TargetType="ListBox">
+				<Setter Property="FontSize" Value="14" />
+				<Setter Property="Margin" Value="5" />
+				<Setter Property="BorderThickness" Value="1" />
+				<Setter Property="BorderBrush" Value="LightGray" />
+				<Setter Property="Background" Value="White" />
+				<Setter Property="MaxHeight" Value="150" />
+			</Style>
 			<Style x:Key="MyButtonStyle" TargetType="Button">
 				<Setter Property="FontFamily" Value="Verdana"/>
 				<Setter Property="Background">

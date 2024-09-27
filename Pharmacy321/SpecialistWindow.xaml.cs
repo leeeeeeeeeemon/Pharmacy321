@@ -25,16 +25,16 @@ namespace Pharmacy321
         {
             InitializeComponent();
             database = new Database();
-            LoadClients();
+            //LoadClients();
             LoadSpecialists();
             LoadClientsGrid();
         }
 
-        private void LoadClients()
-        {
-            // Загрузка клиентов в ComboBox
-            ClientsComboBox.ItemsSource = database.GetClients().DefaultView; // Убедитесь, что это возвращает нужные данные
-        }
+        //private void LoadClients()
+        //{
+        //    // Загрузка клиентов в ComboBox
+        //    ClientsComboBox.ItemsSource = database.GetClients().DefaultView; // Убедитесь, что это возвращает нужные данные
+        //}
 
         private void LoadSpecialists()
         {
@@ -69,7 +69,7 @@ namespace Pharmacy321
         private void RecordAppointmentButton_Click(object sender, RoutedEventArgs e)
         {
             // Логика записи клиента на прием
-            string selectedClient = ClientsComboBox.SelectedItem.ToString();
+            string selectedClient = ClientsTextBox.Text.ToLower();
             string selectedSpecialist = SpecialistsComboBox.SelectedItem.ToString();
 
             // Здесь должна быть логика для записи на прием в базу данных
@@ -83,5 +83,47 @@ namespace Pharmacy321
             var clients = database.GetClients(); // Убедитесь, что этот метод возвращает нужные данные
             ClientsDataGrid.ItemsSource = clients.DefaultView; // Здесь нет ошибки, так как метод GetClients() используется из объекта database
         }
+        private void ClientsTextBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            string input = ClientsTextBox.Text.ToLower(); // Приведение к нижнему регистру для простоты поиска
+            if (string.IsNullOrWhiteSpace(input))
+            {
+                ClientsListBox.Visibility = Visibility.Collapsed;
+                return;
+            }
+
+            DataTable clients = database.GetClients(); // Получаем всех клиентов из базы данных
+            var filteredClients = clients.AsEnumerable()
+                .Where(row => row.Field<string>("FName").ToLower().StartsWith(input) || row.Field<string>("Name").ToLower().StartsWith(input))
+                .Select(row => new
+                {
+                    ID = row.Field<int>("ID_Klient"),
+                    FullName = $"{row.Field<string>("FName")} {row.Field<string>("Name")}"
+                })
+                .ToList();
+
+            if (filteredClients.Any())
+            {
+                ClientsListBox.ItemsSource = filteredClients;
+                ClientsListBox.DisplayMemberPath = "FullName";
+                ClientsListBox.SelectedValuePath = "ID";
+                ClientsListBox.Visibility = Visibility.Visible;
+            }
+            else
+            {
+                ClientsListBox.Visibility = Visibility.Collapsed;
+            }
+        }
+
+        private void ClientsListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (ClientsListBox.SelectedItem != null)
+            {
+                var selectedClient = ClientsListBox.SelectedItem;
+                ClientsTextBox.Text = (selectedClient as dynamic).FullName; // Заполнение текстового поля выбранным клиентом
+                ClientsListBox.Visibility = Visibility.Collapsed;
+            }
+        }
+
     }
 }

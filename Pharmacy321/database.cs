@@ -26,13 +26,14 @@ namespace Pharmacy321
             using (SqlConnection conn = new SqlConnection(connectionString))
             {
                 conn.Open();
-                string query = "SELECT * FROM Klient";
+                string query = "SELECT ID_Klient, FName, Name FROM Klient";
                 SqlDataAdapter adapter = new SqlDataAdapter(query, conn);
                 DataTable dataTable = new DataTable();
                 adapter.Fill(dataTable);
                 return dataTable;
             }
         }
+
         public void AddClient(string FName, string Name, string Othestvo, string Pochta, string Telefon, string Skidka)
         {
             using (SqlConnection conn = new SqlConnection(connectionString))
@@ -62,5 +63,6 @@ namespace Pharmacy321
                 command.ExecuteNonQuery();
             }
         }
+
     }
 }

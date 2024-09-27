@@ -34,7 +34,8 @@
 			<TabItem Header="Записать клиента на прием">
 				<StackPanel Margin="10">
 					<Label Content="Выберите клиента:" Style="{StaticResource MyLabelStyle}" />
-					<ComboBox x:Name="ClientsComboBox" Style="{StaticResource MyComboBoxStyle}" />
+					<TextBox x:Name="ClientsTextBox" Style="{StaticResource MyTextBoxStyle}" TextChanged="ClientsTextBox_TextChanged" />
+					<ListBox x:Name="ClientsListBox" Style="{StaticResource MyListBoxStyle}" SelectionChanged="ClientsListBox_SelectionChanged" Visibility="Collapsed"/>
 
 					<Label Content="Специалист:" Style="{StaticResource MyLabelStyle}" />
 					<ComboBox x:Name="SpecialistsComboBox" Style="{StaticResource MyComboBoxStyle}" />
