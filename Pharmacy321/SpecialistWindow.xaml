@@ -5,8 +5,43 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Pharmacy321"
         mc:Ignorable="d"
-        Title="SpecialistWindow" Height="450" Width="800">
-    <Grid>
-        
-    </Grid>
+        Title="SpecialistWindow" Height="750" Width="800">
+	<Grid>
+		<TabControl>
+			<TabItem Header="Добавить клиента">
+				<StackPanel Margin="10">
+					<Label Content="Фамилия:" Style="{StaticResource MyLabelStyle}" />
+					<TextBox x:Name="LastNameTextBox" Style="{StaticResource MyTextBoxStyle}" />
+
+					<Label Content="Имя:" Style="{StaticResource MyLabelStyle}" />
+					<TextBox x:Name="FirstNameTextBox" Style="{StaticResource MyTextBoxStyle}" />
+
+					<Label Content="Отчество:" Style="{StaticResource MyLabelStyle}" />
+					<TextBox x:Name="MiddleNameTextBox" Style="{StaticResource MyTextBoxStyle}" />
+
+					<Label Content="Почта:" Style="{StaticResource MyLabelStyle}" />
+					<TextBox x:Name="EmailTextBox" Style="{StaticResource MyTextBoxStyle}" />
+
+					<Label Content="Телефон:" Style="{StaticResource MyLabelStyle}" />
+					<TextBox x:Name="PhoneTextBox" Style="{StaticResource MyTextBoxStyle}" />
+
+					<Label Content="Скидка:" Style="{StaticResource MyLabelStyle}" />
+					<TextBox x:Name="DiscountTextBox" Style="{StaticResource MyTextBoxStyle}" />
+
+					<Button Content="Добавить клиента" Style="{StaticResource MyButtonStyle}" Click="AddClientButton_Click" />
+				</StackPanel>
+			</TabItem>
+			<TabItem Header="Записать клиента на прием">
+				<StackPanel Margin="10">
+					<Label Content="Выберите клиента:" Style="{StaticResource MyLabelStyle}" />
+					<ComboBox x:Name="ClientsComboBox" Style="{StaticResource MyComboBoxStyle}" />
+
+					<Label Content="Специалист:" Style="{StaticResource MyLabelStyle}" />
+					<ComboBox x:Name="SpecialistsComboBox" Style="{StaticResource MyComboBoxStyle}" />
+
+					<Button Content="Записать на прием" Style="{StaticResource MyButtonStyle}" Click="RecordAppointmentButton_Click" />
+				</StackPanel>
+			</TabItem>
+		</TabControl>
+	</Grid>
 </Window>

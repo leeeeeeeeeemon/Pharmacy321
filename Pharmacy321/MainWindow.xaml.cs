@@ -1,13 +1,5 @@
-﻿using System.Text;
+﻿using System.Collections.Generic;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace Pharmacy321
 {
@@ -16,18 +8,15 @@ namespace Pharmacy321
     /// </summary>
     public partial class MainWindow : Window
     {
-        private Database database;
+        private Database database; // Объявление переменной database
+
         public MainWindow()
         {
             InitializeComponent();
             database = new Database();
-            //LoadData();
+
             RoleComboBox.ItemsSource = new List<string> { "Администратор", "Сотрудник", "Бухгалтер", "Специалист" };
         }
-        //private void LoadData()
-        //{
-        //    dataGridClients.ItemsSource = database.GetClients().DefaultView;
-        //}
 
         private void LoginButton_Click(object sender, RoutedEventArgs e)
         {
@@ -87,26 +76,24 @@ namespace Pharmacy321
             }
         }
 
-        // Пример функций для проверки паролей
         private bool CheckAdminPassword(string password)
         {
-            // Здесь должна быть реальная проверка пароля
-            return password == "admin_password"; // замените на реальный пароль
+            return password == "admin_password";
         }
 
         private bool CheckEmployeePassword(string password)
         {
-            return password == "employee_password"; // замените на реальный пароль
+            return password == "employee_password";
         }
 
         private bool CheckAccountantPassword(string password)
         {
-            return password == "accountant_password"; // замените на реальный пароль
+            return password == "accountant_password";
         }
 
         private bool CheckSpecialistPassword(string password)
         {
-            return password == "specialist_password"; // замените на реальный пароль
+            return password == "123";
         }
     }
 }

@@ -83,6 +83,25 @@
 				<Setter Property="HorizontalAlignment" Value="Center"/>
 				<Setter Property="Margin" Value="10"/>
 			</Style>
+			<Style x:Key="MyTextBoxStyle" TargetType="TextBox">
+				<Setter Property="FontFamily" Value="Verdana"/>
+				<Setter Property="Margin" Value="10"/>
+				<Setter Property="Padding" Value="5"/>
+				<Setter Property="Background" Value="White"/>
+				<Setter Property="Foreground" Value="Black"/>
+				<Setter Property="BorderBrush" Value="#1E90FF"/>
+				<Setter Property="BorderThickness" Value="2"/>
+				<Setter Property="Effect">
+					<Setter.Value>
+						<DropShadowEffect ShadowDepth="2" Color="Gray" BlurRadius="5"/>
+					</Setter.Value>
+				</Setter>
+				<Style.Triggers>
+					<Trigger Property="IsMouseOver" Value="True">
+						<Setter Property="Background" Value="#F0F8FF"/>
+					</Trigger>
+				</Style.Triggers>
+			</Style>
 
 		</ResourceDictionary>
 	</Application.Resources>
