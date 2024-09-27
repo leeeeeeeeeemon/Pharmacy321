@@ -1,4 +1,5 @@
-﻿using System.Text;
+﻿using Pharmacy321.Windows;
+using System.Text;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -19,6 +20,15 @@ namespace Pharmacy321
         public MainWindow()
         {
             InitializeComponent();
+            NavFrame.Navigated += Frame_Navigated;
+            NavFrame.NavigationService.Navigate(new smth());
+        }
+
+        private void Frame_Navigated(object sender, NavigationEventArgs e)
+        {
+            var pageContent = NavFrame.Content;
+            
+
         }
     }
 }

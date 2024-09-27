@@ -6,28 +6,12 @@
         xmlns:local="clr-namespace:Pharmacy321"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    
-    
-    
-    <Grid Background="DarkCyan">
-        <Grid>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition/>
-                <ColumnDefinition Width="auto"/>
-                <ColumnDefinition/>
-            </Grid.ColumnDefinitions>
-            <Grid Grid.Column="1" Background="White">
-                <Grid.RowDefinitions>
-                    <RowDefinition/>
-                    <RowDefinition/>
-                    <RowDefinition />
-                </Grid.RowDefinitions>
-                <Label Content="Login" Grid.Row="1" Background="GhostWhite"/>
-                <TextBox Grid.Row="1" Width="200" Height="30" VerticalAlignment="Top" Margin="30" ></TextBox>
-                <Label Content="Password" Grid.Row="1" VerticalAlignment="Center"/>
-                <TextBox Grid.Row="1" Width="200" Height="30" VerticalAlignment="Bottom" Margin="20"></TextBox>
-            </Grid>
-           
-        </Grid>
+
+
+
+    <Grid >
+        <Frame x:Name="NavFrame">
+            
+        </Frame>
     </Grid>
 </Window>

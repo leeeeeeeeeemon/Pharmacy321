@@ -1,0 +1,34 @@
+﻿<Page x:Class="Pharmacy321.Windows.smth"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Pharmacy321.Windows"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="smth">
+
+    <Grid Background="DarkCyan">
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Grid Grid.Column="1" Background="White">
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition />
+                </Grid.RowDefinitions>
+                <Label Content="Authorization" VerticalAlignment="Bottom" HorizontalAlignment="Center"/>
+                <Label Content="Login" Grid.Row="1" Background="GhostWhite"/>
+                <TextBox x:Name="logtb" Grid.Row="1" Width="200" Height="30" VerticalAlignment="Top" Margin="30" ></TextBox>
+                <Label  x:Name="pastb" Content="Password" Grid.Row="1" VerticalAlignment="Center"/>
+                <TextBox Grid.Row="1" Width="200" Height="30" VerticalAlignment="Bottom" Margin="20"></TextBox>
+                <Button Content="Open" Grid.Row="2" Width="100" Height="20" VerticalAlignment="Top" Click="Button_Click"/>
+            </Grid>
+
+        </Grid>
+    </Grid>
+</Page>
