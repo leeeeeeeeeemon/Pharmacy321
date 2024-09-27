@@ -10,6 +10,7 @@
 		<TabControl>
 			<TabItem Header="Добавить клиента">
 				<StackPanel Margin="10">
+					<!-- Поля для добавления клиента -->
 					<Label Content="Фамилия:" Style="{StaticResource MyLabelStyle}" />
 					<TextBox x:Name="FNameTextBox" Style="{StaticResource MyTextBoxStyle}" />
 
@@ -23,10 +24,16 @@
 					<TextBox x:Name="PochtaTextBox" Style="{StaticResource MyTextBoxStyle}" />
 
 					<Label Content="Телефон:" Style="{StaticResource MyLabelStyle}" />
-					<TextBox x:Name="TelefonTextBox" Style="{StaticResource MyTextBoxStyle}" />
+					<TextBox x:Name="TelefonTextBox" Style="{StaticResource MyTextBoxStyle}"/> <!--PreviewTextInput="TelefonTextBox_PreviewTextInput"--> 
 
 					<Label Content="Скидка:" Style="{StaticResource MyLabelStyle}" />
-					<TextBox x:Name="SkidkaTextBox" Style="{StaticResource MyTextBoxStyle}" />
+					<ComboBox x:Name="SkidkaComboBox" Style="{StaticResource MyComboBoxStyle}">
+						<ComboBoxItem Content="5" />
+						<ComboBoxItem Content="10" />
+						<ComboBoxItem Content="20" />
+						<ComboBoxItem Content="25" />
+						<ComboBoxItem Content="50" />
+					</ComboBox>
 
 					<Button Content="Добавить клиента" Style="{StaticResource MyButtonStyle}" Click="AddClientButton_Click" />
 				</StackPanel>
@@ -39,6 +46,7 @@
 
 					<Label Content="Специалист:" Style="{StaticResource MyLabelStyle}" />
 					<ComboBox x:Name="SpecialistsComboBox" Style="{StaticResource MyComboBoxStyle}" />
+
 
 					<Button Content="Записать на прием" Style="{StaticResource MyButtonStyle}" Click="RecordAppointmentButton_Click" />
 				</StackPanel>

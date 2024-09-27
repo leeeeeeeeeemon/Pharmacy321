@@ -7,8 +7,67 @@
         mc:Ignorable="d"
         Title="AdminWindow" Height="450" Width="800">
 	<Grid>
-		<DataGrid x:Name="dataGridClients" 
-                  AutoGenerateColumns="True" 
-                  Margin="10"/>
+		<!--<TabControl>
+			<TabItem Header="Добавить клиента">
+				<StackPanel Margin="10">
+					--><!-- Поля для добавления клиента --><!--
+					<Label Content="Фамилия:" Style="{StaticResource MyLabelStyle}" />
+					<TextBox x:Name="FNameTextBox" Style="{StaticResource MyTextBoxStyle}" />
+
+					<Label Content="Имя:" Style="{StaticResource MyLabelStyle}" />
+					<TextBox x:Name="NameTextBox" Style="{StaticResource MyTextBoxStyle}" />
+
+					<Label Content="Отчество:" Style="{StaticResource MyLabelStyle}" />
+					<TextBox x:Name="OthestvoTextBox" Style="{StaticResource MyTextBoxStyle}" />
+
+					<Label Content="Почта:" Style="{StaticResource MyLabelStyle}" />
+					<TextBox x:Name="PochtaTextBox" Style="{StaticResource MyTextBoxStyle}" />
+
+					<Label Content="Телефон:" Style="{StaticResource MyLabelStyle}" />
+					<TextBox x:Name="TelefonTextBox" Style="{StaticResource MyTextBoxStyle}"/>
+					--><!--PreviewTextInput="TelefonTextBox_PreviewTextInput"--><!--
+
+					<Label Content="Скидка:" Style="{StaticResource MyLabelStyle}" />
+					<ComboBox x:Name="SkidkaComboBox" Style="{StaticResource MyComboBoxStyle}">
+						<ComboBoxItem Content="5" />
+						<ComboBoxItem Content="10" />
+						<ComboBoxItem Content="20" />
+						<ComboBoxItem Content="25" />
+						<ComboBoxItem Content="50" />
+					</ComboBox>
+
+					<Button Content="Добавить клиента" Style="{StaticResource MyButtonStyle}" Click="AddClientButton_Click" />
+				</StackPanel>
+			</TabItem>
+			<TabItem Header="Записать клиента на прием">
+				<StackPanel Margin="10">
+					<Label Content="Выберите клиента:" Style="{StaticResource MyLabelStyle}" />
+					<TextBox x:Name="ClientsTextBox" Style="{StaticResource MyTextBoxStyle}" TextChanged="ClientsTextBox_TextChanged" />
+					<ListBox x:Name="ClientsListBox" Style="{StaticResource MyListBoxStyle}" SelectionChanged="ClientsListBox_SelectionChanged" Visibility="Collapsed"/>
+
+					<Label Content="Специалист:" Style="{StaticResource MyLabelStyle}" />
+					<ComboBox x:Name="SpecialistsComboBox" Style="{StaticResource MyComboBoxStyle}" />
+
+
+					<Button Content="Записать на прием" Style="{StaticResource MyButtonStyle}" Click="RecordAppointmentButton_Click" />
+				</StackPanel>
+			</TabItem>
+			<TabItem Header="Клиенты">
+				<StackPanel Margin="10">
+					<DataGrid x:Name="ClientsDataGrid" AutoGenerateColumns="False" Style="{StaticResource MyDataGridStyle}">
+						<DataGrid.Columns>
+							<DataGridTextColumn Header="ID" Binding="{Binding ID_Klient}" />
+							<DataGridTextColumn Header="Фамилия" Binding="{Binding FName}" />
+							<DataGridTextColumn Header="Имя" Binding="{Binding Name}" />
+							<DataGridTextColumn Header="Отчество" Binding="{Binding Othestvo}" />
+							<DataGridTextColumn Header="Почта" Binding="{Binding Pochta}" />
+							<DataGridTextColumn Header="Телефон" Binding="{Binding Telefon}" />
+							<DataGridTextColumn Header="Скидка" Binding="{Binding Skidka}" />
+						</DataGrid.Columns>
+					</DataGrid>
+				</StackPanel>
+			</TabItem>
+
+		</TabControl>-->
 	</Grid>
 </Window>

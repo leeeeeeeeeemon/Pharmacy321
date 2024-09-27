@@ -52,7 +52,8 @@ namespace Pharmacy321
             string Othestvo = OthestvoTextBox.Text;
             string Pochta = PochtaTextBox.Text;
             string Telefon = TelefonTextBox.Text;
-            string Skidka = SkidkaTextBox.Text;
+            string Skidka = (SkidkaComboBox.SelectedItem as ComboBoxItem)?.Content.ToString();
+
 
 
             database.AddClient(FName, Name, Othestvo, Pochta, Telefon, Skidka);
@@ -64,7 +65,7 @@ namespace Pharmacy321
             OthestvoTextBox.Clear();
             PochtaTextBox.Clear();
             TelefonTextBox.Clear();
-            SkidkaTextBox.Clear();
+            SkidkaComboBox.SelectedIndex = -1;
         }
 
         private void RecordAppointmentButton_Click(object sender, RoutedEventArgs e)
@@ -125,6 +126,43 @@ namespace Pharmacy321
                 ClientsListBox.Visibility = Visibility.Collapsed;
             }
         }
+        //private void TelefonTextBox_PreviewTextInput(object sender, TextCompositionEventArgs e)
+        //{
+        //    var textBox = sender as TextBox;
+        //    if (textBox != null)
+        //    {
+        //        int cursorPosition = textBox.SelectionStart;
+        //        string currentText = textBox.Text;
 
+        //        if (!char.IsDigit(e.Text[0]))
+        //        {
+        //            e.Handled = true; // Блокируем ввод, если это не цифра
+        //            return;
+        //        }
+
+        //        // Формат телефона +7(___) ___-__-__
+        //        if (currentText.Length < 16)
+        //        {
+        //            currentText = ApplyPhoneMask(currentText, e.Text);
+        //            textBox.Text = currentText;
+        //            textBox.SelectionStart = cursorPosition + 1; // Обновляем позицию курсора
+        //            e.Handled = true; // Блокируем дальнейший ввод, так как мы уже обработали текст
+        //        }
+        //    }
+        //}
+
+        //private string ApplyPhoneMask(string text, string newText)
+        //{
+        //    // Удаляем нецифровые символы из текущего текста
+        //    string digits = new string(text.Where(char.IsDigit).ToArray()) + newText;
+        //    string formattedText = "+7(";
+
+        //    if (digits.Length > 1) formattedText += digits.Substring(1, Math.Min(3, digits.Length - 1));
+        //    if (digits.Length > 4) formattedText += ") " + digits.Substring(4, Math.Min(3, digits.Length - 4));
+        //    if (digits.Length > 7) formattedText += "-" + digits.Substring(7, Math.Min(2, digits.Length - 7));
+        //    if (digits.Length > 9) formattedText += "-" + digits.Substring(9, Math.Min(2, digits.Length - 9));
+
+        //    return formattedText;
+        //}
     }
 }
