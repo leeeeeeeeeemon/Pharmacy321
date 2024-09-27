@@ -19,9 +19,18 @@ namespace Pharmacy321
     /// </summary>
     public partial class AdminWindow : Window
     {
+        private Database database;
+
         public AdminWindow()
         {
             InitializeComponent();
+            database = new Database();
+            LoadData();
+        }
+
+        private void LoadData()
+        {
+            dataGridClients.ItemsSource = database.GetClients().DefaultView;
         }
     }
 }

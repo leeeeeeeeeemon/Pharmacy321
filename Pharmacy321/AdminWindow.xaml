@@ -6,7 +6,9 @@
         xmlns:local="clr-namespace:Pharmacy321"
         mc:Ignorable="d"
         Title="AdminWindow" Height="450" Width="800">
-    <Grid>
-        
-    </Grid>
+	<Grid>
+		<DataGrid x:Name="dataGridClients" 
+                  AutoGenerateColumns="True" 
+                  Margin="10"/>
+	</Grid>
 </Window>
