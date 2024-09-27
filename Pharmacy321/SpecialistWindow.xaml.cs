@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -11,6 +13,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using System.Xml.Linq;
 
 namespace Pharmacy321
 {
@@ -24,6 +27,7 @@ namespace Pharmacy321
             database = new Database();
             LoadClients();
             LoadSpecialists();
+            LoadClientsGrid();
         }
 
         private void LoadClients()
@@ -42,24 +46,24 @@ namespace Pharmacy321
         private void AddClientButton_Click(object sender, RoutedEventArgs e)
         {
             // Считывание данных из текстовых полей
-            string lastName = LastNameTextBox.Text;
-            string firstName = FirstNameTextBox.Text;
-            string middleName = MiddleNameTextBox.Text;
-            string email = EmailTextBox.Text;
-            string phone = PhoneTextBox.Text;
-            string discount = DiscountTextBox.Text;
+            string FName = FNameTextBox.Text;
+            string Name = NameTextBox.Text;
+            string Othestvo = OthestvoTextBox.Text;
+            string Pochta = PochtaTextBox.Text;
+            string Telefon = TelefonTextBox.Text;
+            string Skidka = SkidkaTextBox.Text;
 
             // Добавление клиента в базу данных
-            database.AddClient(lastName, firstName, middleName, email, phone, discount);
+            database.AddClient(FName, Name, Othestvo, Pochta, Telefon, Skidka);
             MessageBox.Show("Клиент добавлен успешно!");
 
             // Очистка полей после добавления
-            LastNameTextBox.Clear();
-            FirstNameTextBox.Clear();
-            MiddleNameTextBox.Clear();
-            EmailTextBox.Clear();
-            PhoneTextBox.Clear();
-            DiscountTextBox.Clear();
+            FNameTextBox.Clear();
+            NameTextBox.Clear();
+            OthestvoTextBox.Clear();
+            PochtaTextBox.Clear();
+            TelefonTextBox.Clear();
+            SkidkaTextBox.Clear();
         }
 
         private void RecordAppointmentButton_Click(object sender, RoutedEventArgs e)
@@ -71,6 +75,13 @@ namespace Pharmacy321
             // Здесь должна быть логика для записи на прием в базу данных
             database.RecordAppointment(selectedClient, selectedSpecialist);
             MessageBox.Show("Запись на прием выполнена успешно!");
+        }
+
+        private void LoadClientsGrid()
+        {
+            // Загрузка клиентов в DataGrid
+            var clients = database.GetClients(); // Убедитесь, что этот метод возвращает нужные данные
+            ClientsDataGrid.ItemsSource = clients.DefaultView; // Здесь нет ошибки, так как метод GetClients() используется из объекта database
         }
     }
 }

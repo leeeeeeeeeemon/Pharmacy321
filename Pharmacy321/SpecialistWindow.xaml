@@ -11,22 +11,22 @@
 			<TabItem Header="Добавить клиента">
 				<StackPanel Margin="10">
 					<Label Content="Фамилия:" Style="{StaticResource MyLabelStyle}" />
-					<TextBox x:Name="LastNameTextBox" Style="{StaticResource MyTextBoxStyle}" />
+					<TextBox x:Name="FNameTextBox" Style="{StaticResource MyTextBoxStyle}" />
 
 					<Label Content="Имя:" Style="{StaticResource MyLabelStyle}" />
-					<TextBox x:Name="FirstNameTextBox" Style="{StaticResource MyTextBoxStyle}" />
+					<TextBox x:Name="NameTextBox" Style="{StaticResource MyTextBoxStyle}" />
 
 					<Label Content="Отчество:" Style="{StaticResource MyLabelStyle}" />
-					<TextBox x:Name="MiddleNameTextBox" Style="{StaticResource MyTextBoxStyle}" />
+					<TextBox x:Name="OthestvoTextBox" Style="{StaticResource MyTextBoxStyle}" />
 
 					<Label Content="Почта:" Style="{StaticResource MyLabelStyle}" />
-					<TextBox x:Name="EmailTextBox" Style="{StaticResource MyTextBoxStyle}" />
+					<TextBox x:Name="PochtaTextBox" Style="{StaticResource MyTextBoxStyle}" />
 
 					<Label Content="Телефон:" Style="{StaticResource MyLabelStyle}" />
-					<TextBox x:Name="PhoneTextBox" Style="{StaticResource MyTextBoxStyle}" />
+					<TextBox x:Name="TelefonTextBox" Style="{StaticResource MyTextBoxStyle}" />
 
 					<Label Content="Скидка:" Style="{StaticResource MyLabelStyle}" />
-					<TextBox x:Name="DiscountTextBox" Style="{StaticResource MyTextBoxStyle}" />
+					<TextBox x:Name="SkidkaTextBox" Style="{StaticResource MyTextBoxStyle}" />
 
 					<Button Content="Добавить клиента" Style="{StaticResource MyButtonStyle}" Click="AddClientButton_Click" />
 				</StackPanel>
@@ -42,6 +42,22 @@
 					<Button Content="Записать на прием" Style="{StaticResource MyButtonStyle}" Click="RecordAppointmentButton_Click" />
 				</StackPanel>
 			</TabItem>
+			<TabItem Header="Клиенты">
+				<StackPanel Margin="10">
+					<DataGrid x:Name="ClientsDataGrid" AutoGenerateColumns="False" Style="{StaticResource MyDataGridStyle}">
+						<DataGrid.Columns>
+							<DataGridTextColumn Header="ID" Binding="{Binding ID_Klient}" />
+							<DataGridTextColumn Header="Фамилия" Binding="{Binding FName}" />
+							<DataGridTextColumn Header="Имя" Binding="{Binding Name}" />
+							<DataGridTextColumn Header="Отчество" Binding="{Binding Othestvo}" />
+							<DataGridTextColumn Header="Почта" Binding="{Binding Pochta}" />
+							<DataGridTextColumn Header="Телефон" Binding="{Binding Telefon}" />
+							<DataGridTextColumn Header="Скидка" Binding="{Binding Skidka}" />
+						</DataGrid.Columns>
+					</DataGrid>
+				</StackPanel>
+			</TabItem>
+
 		</TabControl>
 	</Grid>
 </Window>

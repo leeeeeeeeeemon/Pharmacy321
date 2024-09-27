@@ -13,6 +13,8 @@ namespace Pharmacy321
     public class Database
     {
         private string connectionString;
+      
+
 
         public Database()
         {
@@ -36,7 +38,7 @@ namespace Pharmacy321
             using (SqlConnection conn = new SqlConnection(connectionString))
             {
                 conn.Open();
-                string query = "INSERT INTO Klient (FName, Name,  Othestvo, Pochta, Telefon, Skidka) VALUES (@Name, @FName, @Othestvo, @Pochta, @Telefon, @Skidka)";
+                string query = "INSERT INTO Klient (FName, Name,  Othestvo, Pochta, Telefon, Skidka) VALUES (@FName, @Name, @Othestvo, @Pochta, @Telefon, @Skidka)";
                 SqlCommand command = new SqlCommand(query, conn);
                 command.Parameters.AddWithValue("@FName", FName);
                 command.Parameters.AddWithValue("@Name", Name);
