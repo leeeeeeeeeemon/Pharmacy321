@@ -13,14 +13,8 @@ namespace Pharmacy321
         {
             InitializeComponent();
             database = new Database();
-            LoadEmployeesGrid();
+          
             LoadContractsGrid();
-        }
-
-        private void LoadEmployeesGrid()
-        {
-            DataTable employees = database.GetEmployees(); // Метод для получения сотрудников из БД
-            EmployeesDataGrid.ItemsSource = employees.DefaultView;
         }
 
         private void LoadContractsGrid()
@@ -45,22 +39,26 @@ namespace Pharmacy321
             OthestvoTextBox.Clear();
             DoljnostTextBox.Clear();
 
-            LoadEmployeesGrid(); // Обновление списка сотрудников
         }
 
         private void CreateContractButton_Click(object sender, RoutedEventArgs e)
         {
-            int employeeId = int.Parse(EmployeeIdTextBox.Text);
-            string description = DogovorDescriptionTextBox.Text;
+            string Nomer_Dogovota = Nomer_DogovotaTextBox.Text;
 
-            database.CreateContract(employeeId, description); // Метод для создания договора в БД
+            if (string.IsNullOrWhiteSpace(Nomer_Dogovota))
+            {
+                MessageBox.Show("Пожалуйста, введите описание договора.");
+                return;
+            }
+
+            database.CreateContract(Nomer_Dogovota); // Создание договора в БД
             MessageBox.Show("Договор создан успешно!");
 
             // Очистка полей после добавления
-            EmployeeIdTextBox.Clear();
-            DogovorDescriptionTextBox.Clear();
+            Nomer_DogovotaTextBox.Clear();
 
             LoadContractsGrid(); // Обновление списка договоров
         }
+
     }
 }

@@ -7,19 +7,19 @@
 			<!-- Вкладка для добавления сотрудников -->
 			<TabItem Header="Добавить сотрудника">
 				<StackPanel Margin="10">
-					<Label Content="Фамилия:" />
-					<TextBox x:Name="FNameTextBox" />
+                    <Label Content="Фамилия:" Style="{StaticResource MyLabelStyle}" />
+                    <TextBox x:Name="FNameTextBox" Style="{StaticResource MyTextBoxStyle}" />
 
-					<Label Content="Имя:" />
-					<TextBox x:Name="NameTextBox" />
+                    <Label Content="Имя:" Style="{StaticResource MyLabelStyle}" />
+                    <TextBox x:Name="NameTextBox" Style="{StaticResource MyTextBoxStyle}" />
 
-					<Label Content="Отчество:" />
-					<TextBox x:Name="OthestvoTextBox" />
+                    <Label Content="Отчество:" Style="{StaticResource MyLabelStyle}" />
+                    <TextBox x:Name="OthestvoTextBox" Style="{StaticResource MyTextBoxStyle}"/>
 
-					<Label Content="Должность:" />
-					<TextBox x:Name="DoljnostTextBox" />
+                    <Label Content="Должность:" Style="{StaticResource MyLabelStyle}" />
+                    <TextBox x:Name="DoljnostTextBox" Style="{StaticResource MyTextBoxStyle}" />
 
-					<Button Content="Добавить сотрудника" Click="AddEmployeeButton_Click" />
+                    <Button Content="Добавить сотрудника" Style="{StaticResource MyButtonStyle}" Click="AddEmployeeButton_Click"  />
 				</StackPanel>
 			</TabItem>
 
@@ -41,13 +41,11 @@
 			<!-- Вкладка для создания договоров -->
 			<TabItem Header="Создать договор">
 				<StackPanel Margin="10">
-					<Label Content="ID Сотрудника:" />
-					<TextBox x:Name="EmployeeIdTextBox" />
 
-					<Label Content="Описание договора:" />
-					<TextBox x:Name="DogovorDescriptionTextBox" />
+                    <Label Content="Описание/Номер договора:"  Style="{StaticResource MyLabelStyle}"/>
+                    <TextBox x:Name="Nomer_DogovotaTextBox" Style="{StaticResource MyTextBoxStyle}" />
 
-					<Button Content="Создать договор" Click="CreateContractButton_Click" />
+                    <Button Content="Создать договор" Click="CreateContractButton_Click" Style="{StaticResource MyButtonStyle}" />
 				</StackPanel>
 			</TabItem>
 

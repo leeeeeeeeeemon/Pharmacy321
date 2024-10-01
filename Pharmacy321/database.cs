@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Linq;
+using System.Windows;
 
 namespace Pharmacy321
 {
@@ -117,16 +118,27 @@ namespace Pharmacy321
             }
         }
 
-        public void CreateContract(int clientId, string details)
+        public void CreateContract(string Nomer_Dogovota)
         {
-            using (SqlConnection connection = new SqlConnection(connectionString))
+            try
             {
-                SqlCommand command = new SqlCommand("INSERT INTO Dogovor (ClientID, Details) VALUES (@ClientID, @Details)", connection);
-                command.Parameters.AddWithValue("@ClientID", clientId);
-                command.Parameters.AddWithValue("@Details", details);
-                connection.Open();
-                command.ExecuteNonQuery();
+                using (SqlConnection connection = new SqlConnection(connectionString))
+                {
+                    connection.Open();
+                    string query = "INSERT INTO Dogovor (Nomer_Dogovota) VALUES (@Nomer_Dogovota)";
+                    using (SqlCommand command = new SqlCommand(query, connection))
+                    {
+                        command.Parameters.AddWithValue("@Nomer_Dogovota", Nomer_Dogovota);
+                        command.ExecuteNonQuery();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Ошибка при добавлении договора: {ex.Message}");
             }
         }
+
+
     }
 }
