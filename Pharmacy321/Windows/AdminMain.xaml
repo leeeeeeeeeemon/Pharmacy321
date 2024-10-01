@@ -26,19 +26,19 @@
             </StackPanel>
             <StackPanel Height="7" Background="White" Margin="0,14,0,14" />
             <StackPanel Margin="20,0,0,0">
-                <TextBlock Text="Главная"  Foreground="White" FontSize="20" Margin="0,0,0,16" />
-                <TextBlock Text="Записи к врачам"  Foreground="White" FontSize="20" Margin="0,0,0,16" />
-                <TextBlock Text="Сотрудники"  Foreground="White" FontSize="20" Margin="0,0,0,16" />
-                <TextBlock Text="Оборудование"  Foreground="White" FontSize="20" Margin="0,0,0,16" />
-                <TextBlock Text="Продажи"  Foreground="White" FontSize="20" Margin="0,0,0,16" />
-                <TextBlock Text="Поставки"  Foreground="White" FontSize="20" Margin="0,0,0,16" />
-                <TextBlock Text="Лекарства"  Foreground="White" FontSize="20" Margin="0,0,0,16" />
-                <TextBlock Text="Отчеты"  Foreground="White" FontSize="20" Margin="0,0,0,16" />
-                <TextBlock Text="Договоры"  Foreground="White" FontSize="20" />
+                <TextBlock Text="Главная"  Foreground="White" FontSize="20" Margin="0,0,0,16" Cursor="Hand" />
+                <TextBlock Text="Записи к врачам"  Foreground="White" FontSize="20" Margin="0,0,0,16" Cursor="Hand" />
+                <TextBlock Text="Сотрудники"  Foreground="White" FontSize="20" Margin="0,0,0,16" Cursor="Hand" />
+                <TextBlock Text="Оборудование"  Foreground="White" FontSize="20" Margin="0,0,0,16" Cursor="Hand" />
+                <TextBlock Text="Продажи"  Foreground="White" FontSize="20" Margin="0,0,0,16" Cursor="Hand" />
+                <TextBlock Text="Поставки"  Foreground="White" FontSize="20" Margin="0,0,0,16" Cursor="Hand" />
+                <TextBlock Text="Лекарства"  Foreground="White" FontSize="20" Margin="0,0,0,16" Cursor="Hand" />
+                <TextBlock Text="Отчеты"  Foreground="White" FontSize="20" Margin="0,0,0,16" Cursor="Hand" />
+                <TextBlock Text="Договоры"  Foreground="White" FontSize="20" Cursor="Hand" />
             </StackPanel>
         </StackPanel>
 
-        <StackPanel x:Name="MakeAppointment" Grid.Column="1" Grid.Row="0" Background="#FFD3E4FF" Width="1520" Height="160" Orientation="Horizontal" VerticalAlignment="Bottom" HorizontalAlignment="Center">
+        <StackPanel x:Name="MakeAppointment" Grid.Column="1" Grid.Row="0" Background="#FFD3E4FF" Width="1520" Height="160" Orientation="Horizontal" VerticalAlignment="Bottom" HorizontalAlignment="Center" Cursor="Hand">
             <StackPanel Orientation="Horizontal" VerticalAlignment="Center" Margin="50,0,0,0">
                 <Image
                         Height="130" Source="/img/icons/makeAppointment.png" Stretch="Fill" Width="130"/>
@@ -47,7 +47,7 @@
             </StackPanel>
         </StackPanel>
 
-        <StackPanel x:Name="PlaceOrder" Grid.Column="1" Grid.Row="1" Background="#FFD3E4FF" Width="1520" Height="160" Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,30,0,0">
+        <StackPanel x:Name="PlaceOrder" Grid.Column="1" Grid.Row="1" Background="#FFD3E4FF" Width="1520" Height="160" Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,30,0,0" Cursor="Hand">
             <StackPanel Orientation="Horizontal" VerticalAlignment="Center" Margin="50,0,0,0">
                 <Image
                         Height="130" Source="/img/icons/makeAppointment.png" Stretch="Fill" Width="130"/>
@@ -56,7 +56,7 @@
             </StackPanel>
         </StackPanel>
 
-        <StackPanel x:Name="RegisterClient" Grid.Column="1" Grid.Row="2" Background="#FFD3E4FF" Width="1520" Height="160" Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,0,0,30">
+        <StackPanel x:Name="RegisterClient" Grid.Column="1" Grid.Row="2" Background="#FFD3E4FF" Width="1520" Height="160" Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,0,0,30" Cursor="Hand">
             <StackPanel Orientation="Horizontal" VerticalAlignment="Center" Margin="50,0,0,0">
                 <Image
                         Height="130" Source="/img/icons/makeAppointment.png" Stretch="Fill" Width="130"/>
@@ -65,7 +65,7 @@
             </StackPanel>
         </StackPanel>
 
-        <StackPanel x:Name="MakeReport" Grid.Column="1" Grid.Row="3" Background="#FFD3E4FF" Width="1520" Height="160" Orientation="Horizontal" VerticalAlignment="Top" HorizontalAlignment="Center">
+        <StackPanel x:Name="MakeReport" Grid.Column="1" Grid.Row="3" Background="#FFD3E4FF" Width="1520" Height="160" Orientation="Horizontal" VerticalAlignment="Top" HorizontalAlignment="Center" Cursor="Hand">
             <StackPanel Orientation="Horizontal" VerticalAlignment="Center" Margin="50,0,0,0">
                 <Image
                         Height="130" Source="/img/icons/makeAppointment.png" Stretch="Fill" Width="130"/>

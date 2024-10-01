@@ -1,0 +1,60 @@
+﻿<Page x:Class="Pharmacy.Pages.Admin.MainPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Pharmacy.Pages.Admin"
+      mc:Ignorable="d" 
+      d:DesignHeight="1080" d:DesignWidth="1620"
+      Title="MainPage">
+
+    <Grid>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition  />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+
+        <Button x:Name="MakeAppointment" Grid.Column="1" Grid.Row="0" Background="#FFD3E4FF" Width="1520" Height="160" VerticalAlignment="Bottom" HorizontalAlignment="Center" Cursor="Hand" Click="MakeAppointment_Click">
+            <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
+                <Image
+                Height="130" Source="/img/icons/makeAppointment.png" Stretch="Fill" Width="130"/>
+                <TextBlock Text="ЗАПИСАТЬ ПАЦИЕНТА" FontSize="40" Foreground="#FF6966FF" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="385,0,385,0" />
+                <Image Height="46" Source="/img/icons/arrow.png" Stretch="Fill" Width="66"/>
+            </StackPanel>
+        </Button>
+
+        <Button x:Name="PlaceOrder" Grid.Column="1" Grid.Row="1" Background="#FFD3E4FF" Width="1520" Height="160" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,30,0,0" Cursor="Hand" Click="PlaceOrder_Click">
+            <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
+                <Image
+                Height="160" Source="/img/icons/cart.png" Stretch="Fill" Width="160"/>
+                <TextBlock Text="ОФОРМИТЬ ЗАКАЗ" FontSize="40" Foreground="#FF6966FF" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="420,0,420,0" />
+                <Image Height="46" Source="/img/icons/arrow.png" Stretch="Fill" Width="66"/>
+            </StackPanel>
+        </Button>
+
+        <Button x:Name="RegisterClient" Grid.Column="1" Grid.Row="2" Background="#FFD3E4FF" Width="1520" Height="160" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,0,0,30" Cursor="Hand" Click="RegisterClient_Click">
+            <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
+                <Image
+                Height="160" Source="/img/icons/user.png" Stretch="Fill" Width="160"/>
+                <TextBlock Text="ЗАРЕГИСТРИРОВАТЬ КЛИЕНТА" FontSize="40" Foreground="#FF6966FF" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="300,0,300,0" />
+                <Image Height="46" Source="/img/icons/arrow.png" Stretch="Fill" Width="66"/>
+            </StackPanel>
+        </Button>
+
+        <Button x:Name="MakeReport" Grid.Column="1" Grid.Row="3" Background="#FFD3E4FF" Width="1520" Height="160" VerticalAlignment="Top" HorizontalAlignment="Center" Cursor="Hand" Click="MakeReport_Click">
+            <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
+                <Image
+                Height="160" Source="/img/icons/report.png" Stretch="Fill" Width="160"/>
+                <TextBlock Text="ОФОРМИТЬ СВОДНЫЙ ОТЧЕТ" FontSize="40" Foreground="#FF6966FF" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="305,0,305,0" />
+                <Image Height="46" Source="/img/icons/arrow.png" Stretch="Fill" Width="66"/>
+            </StackPanel>
+        </Button>
+
+    </Grid>
+</Page>

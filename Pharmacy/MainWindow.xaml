@@ -1,0 +1,21 @@
+﻿<Window x:Class="Pharmacy.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Pharmacy"
+        mc:Ignorable="d"
+        WindowStartupLocation="CenterScreen"
+        Title="Authorization" Height="1080" Width="1920">
+    <Grid>
+        <Label Content="АПТЕКА" FontWeight="Bold" FontSize="72" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,100,0,0"/>
+
+        <StackPanel Grid.Row="1" Margin="10" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <Label Content="Пользователь" Padding="0, 4" FontSize="30" />
+            <ComboBox x:Name="Login_CB" DisplayMemberPath="Surname" SelectedValuePath="ID"  Height="36" Margin="0,0,0,10" FontSize="24" Width="600" SelectionChanged="Login_CB_SelectionChanged" />
+            <Label Content="Пароль" Padding="0, 4" FontSize="30" />
+            <PasswordBox x:Name="Password_PB" Height="36" PasswordChar="●" Width="600" FontSize="24"/>
+            <Button x:Name="Login_Btn" Height="50" Margin="0,20,0,10" Content="Войти" Background="#FFB7DBFF" BorderBrush="#FF001457" FontSize="30" FontWeight="Bold" Cursor="Hand" Click="Login_Btn_Click" />
+        </StackPanel>
+    </Grid>
+</Window>
