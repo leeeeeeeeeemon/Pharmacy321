@@ -11,15 +11,11 @@
         <Label Content="АПТЕКА" FontWeight="Bold" FontSize="72" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,100,0,0"/>
 
         <StackPanel Grid.Row="1" Margin="10" HorizontalAlignment="Center" VerticalAlignment="Center">
-            <Label Content="Логин" Padding="0, 4" FontSize="30" />
-            <TextBox x:Name="Login_TB" Height="36" Margin="0,0,0,10" TextWrapping="Wrap" FontSize="24" Width="600" />
+            <Label Content="Пользователь" Padding="0, 4" FontSize="30" />
+            <ComboBox x:Name="Login_CB" Height="36" Margin="0,0,0,10" FontSize="24" Width="600" />
             <Label Content="Пароль" Padding="0, 4" FontSize="30" />
             <PasswordBox x:Name="Password_PB" Height="36" PasswordChar="●" Width="600" FontSize="24"/>
             <Button x:Name="Login_Btn" Height="50" Margin="0,20,0,10" Content="Войти" Background="#FFB7DBFF" BorderBrush="#FF001457" FontSize="30" FontWeight="Bold" Cursor="Hand" Click="Login_Btn_Click" />
-            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                <Button x:Name="Register_Btn" Content="Регистрация" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FF0500FF" Padding="10,2,10,2" FontSize="20" Cursor="Hand" />
-                <Button x:Name="Guest_Btn" Margin="5,0,0,0" Content="Войти как гость" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FF0500FF" Padding="10,2,10,2" FontSize="20" Cursor="Hand" />
-            </StackPanel>
         </StackPanel>
     </Grid>
 </Window>

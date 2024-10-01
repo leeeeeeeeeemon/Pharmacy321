@@ -10,7 +10,6 @@
 
   <ItemGroup>
     <Folder Include="Pages\" />
-    <Folder Include="img\" />
     <Folder Include="Data\" />
   </ItemGroup>
 

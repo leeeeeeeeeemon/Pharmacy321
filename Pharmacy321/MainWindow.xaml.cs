@@ -21,7 +21,7 @@ namespace Pharmacy321
 
         private void Login_Btn_Click(object sender, RoutedEventArgs e)
         {
-            if (Login_TB.Text == "1" && Password_PB.Password == "1")
+            if (Password_PB.Password == "1")
             {
                 new AdminMain().Show();
                 this.Close();

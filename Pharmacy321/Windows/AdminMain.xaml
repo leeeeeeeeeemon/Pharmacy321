@@ -8,7 +8,70 @@
         WindowStartupLocation="CenterScreen"
         Title="AdminMain" Height="1080" Width="1920">
     <Grid>
-        <Label Content="Администрирование" FontWeight="Bold" FontSize="72" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,100,0,0"/>
-        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="300" />
+            <ColumnDefinition  />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+
+        <StackPanel Grid.Column="0" Grid.RowSpan="4" Background="#FF707070">
+            <StackPanel Margin="20,20,0,0">
+                <TextBlock x:Name="userName" Text="Имя пользователя" Foreground="White" FontSize="24" />
+                <TextBlock x:Name="userProfession" Text="Должность" Foreground="White" FontSize="20" />
+            </StackPanel>
+            <StackPanel Height="7" Background="White" Margin="0,14,0,14" />
+            <StackPanel Margin="20,0,0,0">
+                <TextBlock Text="Главная"  Foreground="White" FontSize="20" Margin="0,0,0,16" />
+                <TextBlock Text="Записи к врачам"  Foreground="White" FontSize="20" Margin="0,0,0,16" />
+                <TextBlock Text="Сотрудники"  Foreground="White" FontSize="20" Margin="0,0,0,16" />
+                <TextBlock Text="Оборудование"  Foreground="White" FontSize="20" Margin="0,0,0,16" />
+                <TextBlock Text="Продажи"  Foreground="White" FontSize="20" Margin="0,0,0,16" />
+                <TextBlock Text="Поставки"  Foreground="White" FontSize="20" Margin="0,0,0,16" />
+                <TextBlock Text="Лекарства"  Foreground="White" FontSize="20" Margin="0,0,0,16" />
+                <TextBlock Text="Отчеты"  Foreground="White" FontSize="20" Margin="0,0,0,16" />
+                <TextBlock Text="Договоры"  Foreground="White" FontSize="20" />
+            </StackPanel>
+        </StackPanel>
+
+        <StackPanel x:Name="MakeAppointment" Grid.Column="1" Grid.Row="0" Background="#FFD3E4FF" Width="1520" Height="160" Orientation="Horizontal" VerticalAlignment="Bottom" HorizontalAlignment="Center">
+            <StackPanel Orientation="Horizontal" VerticalAlignment="Center" Margin="50,0,0,0">
+                <Image
+                        Height="130" Source="/img/icons/makeAppointment.png" Stretch="Fill" Width="130"/>
+                <TextBlock Text="ЗАПИСАТЬ ПАЦИЕНТА" FontSize="40" Foreground="#FF6966FF" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="385,0,385,0" />
+                <Image Height="46" Source="/img/icons/arrow.png" Stretch="Fill" Width="66"/>
+            </StackPanel>
+        </StackPanel>
+
+        <StackPanel x:Name="PlaceOrder" Grid.Column="1" Grid.Row="1" Background="#FFD3E4FF" Width="1520" Height="160" Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,30,0,0">
+            <StackPanel Orientation="Horizontal" VerticalAlignment="Center" Margin="50,0,0,0">
+                <Image
+                        Height="130" Source="/img/icons/makeAppointment.png" Stretch="Fill" Width="130"/>
+                <TextBlock Text="ОФОРМИТЬ ЗАКАЗ" FontSize="40" Foreground="#FF6966FF" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="420,0,420,0" />
+                <Image Height="46" Source="/img/icons/arrow.png" Stretch="Fill" Width="66"/>
+            </StackPanel>
+        </StackPanel>
+
+        <StackPanel x:Name="RegisterClient" Grid.Column="1" Grid.Row="2" Background="#FFD3E4FF" Width="1520" Height="160" Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,0,0,30">
+            <StackPanel Orientation="Horizontal" VerticalAlignment="Center" Margin="50,0,0,0">
+                <Image
+                        Height="130" Source="/img/icons/makeAppointment.png" Stretch="Fill" Width="130"/>
+                <TextBlock Text="ЗАРЕГИСТРИРОВАТЬ КЛИЕНТА" FontSize="40" Foreground="#FF6966FF" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="300,0,300,0" />
+                <Image Height="46" Source="/img/icons/arrow.png" Stretch="Fill" Width="66"/>
+            </StackPanel>
+        </StackPanel>
+
+        <StackPanel x:Name="MakeReport" Grid.Column="1" Grid.Row="3" Background="#FFD3E4FF" Width="1520" Height="160" Orientation="Horizontal" VerticalAlignment="Top" HorizontalAlignment="Center">
+            <StackPanel Orientation="Horizontal" VerticalAlignment="Center" Margin="50,0,0,0">
+                <Image
+                        Height="130" Source="/img/icons/makeAppointment.png" Stretch="Fill" Width="130"/>
+                <TextBlock Text="ОФОРМИТЬ СВОДНЫЙ ОТЧЕТ" FontSize="40" Foreground="#FF6966FF" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="305,0,305,0" />
+                <Image Height="46" Source="/img/icons/arrow.png" Stretch="Fill" Width="66"/>
+            </StackPanel>
+        </StackPanel>
     </Grid>
 </Window>
