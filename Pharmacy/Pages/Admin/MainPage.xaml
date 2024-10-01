@@ -8,6 +8,15 @@
       d:DesignHeight="1080" d:DesignWidth="1620"
       Title="MainPage">
 
+    <Page.Resources>
+        <Style TargetType="Button" x:Key="BaseBlueButton">
+            <Setter Property="Width" Value="1520" />
+            <Setter Property="Height" Value="160" />
+            <Setter Property="Background" Value="#FFD3E4FF" />
+            <Setter Property="Cursor" Value="Hand" />
+        </Style>
+    </Page.Resources>
+
     <Grid>
 
         <Grid.ColumnDefinitions>
@@ -20,7 +29,7 @@
             <RowDefinition />
         </Grid.RowDefinitions>
 
-        <Button x:Name="MakeAppointment" Grid.Column="1" Grid.Row="0" Background="#FFD3E4FF" Width="1520" Height="160" VerticalAlignment="Bottom" HorizontalAlignment="Center" Cursor="Hand" Click="MakeAppointment_Click">
+        <Button x:Name="MakeAppointment" Style="{StaticResource BaseBlueButton}" Grid.Column="1" Grid.Row="0"  VerticalAlignment="Bottom" HorizontalAlignment="Center" Click="MakeAppointment_Click">
             <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
                 <Image
                 Height="130" Source="/img/icons/makeAppointment.png" Stretch="Fill" Width="130"/>
@@ -29,7 +38,7 @@
             </StackPanel>
         </Button>
 
-        <Button x:Name="PlaceOrder" Grid.Column="1" Grid.Row="1" Background="#FFD3E4FF" Width="1520" Height="160" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,30,0,0" Cursor="Hand" Click="PlaceOrder_Click">
+        <Button x:Name="PlaceOrder" Grid.Column="1" Grid.Row="1" Style="{StaticResource BaseBlueButton}" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,30,0,0" Click="PlaceOrder_Click">
             <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
                 <Image
                 Height="160" Source="/img/icons/cart.png" Stretch="Fill" Width="160"/>
@@ -38,7 +47,7 @@
             </StackPanel>
         </Button>
 
-        <Button x:Name="RegisterClient" Grid.Column="1" Grid.Row="2" Background="#FFD3E4FF" Width="1520" Height="160" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,0,0,30" Cursor="Hand" Click="RegisterClient_Click">
+        <Button x:Name="RegisterClient" Grid.Column="1" Grid.Row="2" Style="{StaticResource BaseBlueButton}" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,0,0,30" Click="RegisterClient_Click">
             <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
                 <Image
                 Height="160" Source="/img/icons/user.png" Stretch="Fill" Width="160"/>
@@ -47,7 +56,7 @@
             </StackPanel>
         </Button>
 
-        <Button x:Name="MakeReport" Grid.Column="1" Grid.Row="3" Background="#FFD3E4FF" Width="1520" Height="160" VerticalAlignment="Top" HorizontalAlignment="Center" Cursor="Hand" Click="MakeReport_Click">
+        <Button x:Name="MakeReport" Grid.Column="1" Grid.Row="3" Style="{StaticResource BaseBlueButton}" VerticalAlignment="Top" HorizontalAlignment="Center" Click="MakeReport_Click">
             <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
                 <Image
                 Height="160" Source="/img/icons/report.png" Stretch="Fill" Width="160"/>

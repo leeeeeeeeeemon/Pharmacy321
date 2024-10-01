@@ -30,6 +30,7 @@
                 <TextBlock Text="Отчеты"  Foreground="White" FontSize="20" Margin="0,0,0,16" Cursor="Hand" />
                 <TextBlock Text="Договоры"  Foreground="White" FontSize="20" Cursor="Hand" />
             </StackPanel>
+            <Button x:Name="Exit" Content="ВЫЙТИ" Background="{x:Null}" BorderBrush="#FFC9C9C9" Foreground="#FFC9C9C9" HorizontalAlignment="Left" VerticalAlignment="Center" Padding="30,10,30,10" FontSize="20" Margin="20,500,0,0" Width="256" Cursor="Hand" Click="Exit_Click"  />
         </StackPanel>
 
         <Frame x:Name="MainFrame" Grid.Column="1" NavigationUIVisibility="Hidden" Width="1620" Height="1080"/>

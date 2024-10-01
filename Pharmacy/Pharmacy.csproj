@@ -107,6 +107,9 @@
     <Compile Include="Pages\Admin\MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\Admin\MakeAppointmentPage.xaml.cs">
+      <DependentUpon>MakeAppointmentPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Postavka.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
@@ -131,6 +134,9 @@
     <Compile Include="Windows\AdminMain.xaml.cs">
       <DependentUpon>AdminMain.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Windows\AuthorizationWindow.xaml.cs">
+      <DependentUpon>AuthorizationWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Zakaz.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
@@ -153,9 +159,17 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Pages\Admin\MakeAppointmentPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Windows\AdminMain.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Windows\AuthorizationWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
   <ItemGroup>

@@ -26,5 +26,11 @@ namespace Pharmacy.Windows
             userProfession.Text = _currentEmployee.Doljnost;
             MainFrame.Navigate(new MainPage());
         }
+
+        private void Exit_Click(object sender, RoutedEventArgs e)
+        {
+            new AuthorizationWindow().Show();
+            Window.GetWindow(this).Close();
+        }
     }
 }
