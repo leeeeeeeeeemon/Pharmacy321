@@ -32,5 +32,10 @@ namespace Pharmacy.Windows
             new AuthorizationWindow().Show();
             Window.GetWindow(this).Close();
         }
+
+        private void TextBlock_PreviewMouseLeftButtonUp(object sender, MouseButtonEventArgs e)
+        {
+            MainFrame.Navigate(new MainPage());
+        }
     }
 }

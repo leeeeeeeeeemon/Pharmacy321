@@ -32,7 +32,31 @@ namespace Pharmacy.Data
         public static List<Sotrudnik> GetStaff()
         {
             return _context.Sotrudnik.ToList();
-        } 
-        
+        }
+
+        public static List<Klient> GetClients()
+        {
+            return _context.Klient.ToList();
+        }
+
+        public static List<Zapis_priem> GetAppointments()
+        {
+            return _context.Zapis_priem.ToList();
+        }
+
+        public static bool MakeAppointment(Zapis_priem appointment)
+        {
+            try
+            {
+                _context.Zapis_priem.Add(appointment);
+                UpdateDatabase();
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
     }
 }

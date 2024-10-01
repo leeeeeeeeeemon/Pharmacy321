@@ -20,7 +20,7 @@
             </StackPanel>
             <StackPanel Height="7" Background="White" Margin="0,14,0,14" />
             <StackPanel Margin="20,0,0,0">
-                <TextBlock Text="Главная"  Foreground="White" FontSize="20" Margin="0,0,0,16" Cursor="Hand" />
+                <TextBlock Text="Главная"  Foreground="White" FontSize="20" Margin="0,0,0,16" Cursor="Hand" PreviewMouseLeftButtonUp="TextBlock_PreviewMouseLeftButtonUp" />
                 <TextBlock Text="Записи к врачам"  Foreground="White" FontSize="20" Margin="0,0,0,16" Cursor="Hand" />
                 <TextBlock Text="Сотрудники"  Foreground="White" FontSize="20" Margin="0,0,0,16" Cursor="Hand" />
                 <TextBlock Text="Оборудование"  Foreground="White" FontSize="20" Margin="0,0,0,16" Cursor="Hand" />

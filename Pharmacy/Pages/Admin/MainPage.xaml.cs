@@ -25,7 +25,7 @@ namespace Pharmacy.Pages.Admin
 
         private void MakeAppointment_Click(object sender, RoutedEventArgs e)
         {
-            
+            NavigationService.Navigate(new MakeAppointmentPage());
         }
 
         private void PlaceOrder_Click(object sender, RoutedEventArgs e)

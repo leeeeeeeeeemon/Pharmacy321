@@ -8,7 +8,58 @@
       d:DesignHeight="1080" d:DesignWidth="1620"
       Title="MakeAppointmentPage">
 
+    <Page.Resources>
+        <Style TargetType="TextBlock">
+            <Setter Property="FontSize" Value="24"/>
+            <Setter Property="Margin" Value="10"/>
+        </Style>
+        <Style TargetType="ComboBox">
+            <Setter Property="FontSize" Value="24"/>
+            <Setter Property="Margin" Value="10"/>
+        </Style>
+        <Style TargetType="DatePicker">
+            <Setter Property="FontSize" Value="24"/>
+            <Setter Property="Margin" Value="10"/>
+        </Style>
+        <Style TargetType="Button">
+            <Setter Property="FontSize" Value="24"/>
+            <Setter Property="Margin" Value="10"/>
+            <Setter Property="Padding" Value="100 10"/>
+            <Setter Property="Background" Value="#FFD3E4FF"/>
+            <Setter Property="Foreground" Value="#FF6966FF"/>
+            <Setter Property="FontWeight" Value="Bold" />
+            <Setter Property="BorderBrush" Value="#FFD3E4FF"/>
+        </Style>
+    </Page.Resources>
+
     <Grid>
-        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock Grid.Row="0" Text="Запись на прием" FontSize="48" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,20,0,50" FontWeight="Bold"/>
+
+        <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Center">
+            <TextBlock Text="Клиент:"/>
+            <ComboBox x:Name="ClientComboBox" DisplayMemberPath="Surname" SelectedValuePath="Id" Width="200"/>
+        </StackPanel>
+
+        <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Center">
+            <TextBlock Text="Врач:"/>
+            <ComboBox x:Name="DoctorComboBox" DisplayMemberPath="Surname" SelectedValuePath="Id" Width="200"/>
+        </StackPanel>
+
+        <StackPanel Grid.Row="3" Orientation="Horizontal" HorizontalAlignment="Center">
+            <TextBlock Text="Дата и время:"/>
+            <DatePicker x:Name="AppointmentDatePicker" SelectedDateChanged="AppointmentDatePicker_SelectedDateChanged"/>
+            <ComboBox x:Name="AppointmentTimeComboBox" SelectionChanged="AppointmentTimeComboBox_SelectionChanged" Width="150">
+            </ComboBox>
+        </StackPanel>
+
+        <Button Grid.Row="4" Content="ЗАПИСАТЬ" Click="OnMakeAppointmentClick" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="10,20,10,10"/>
     </Grid>
 </Page>
