@@ -67,24 +67,20 @@ namespace Pharmacy321
                 command.ExecuteNonQuery();
             }
         }
-        public void RecordAppointment(string clientName, int specialistId, int contractId)
+        public void RecordAppointment(int clientId, int specialistId, int contractId)
         {
-            // Получите ID клиента по имени
-            int clientId = GetClientIdByName(clientName);
-
-            using (SqlConnection connection = new SqlConnection(connectionString))
+            using (SqlConnection conn = new SqlConnection(connectionString))
             {
-                connection.Open();
+                conn.Open();
                 string query = "INSERT INTO Zapis (ID_klienta, ID_Spec_Sotrudnic, ID_Dogovora) VALUES (@ClientId, @SpecialistId, @ContractId)";
-                using (SqlCommand command = new SqlCommand(query, connection))
-                {
-                    command.Parameters.AddWithValue("@ClientId", clientId);
-                    command.Parameters.AddWithValue("@SpecialistId", specialistId);
-                    command.Parameters.AddWithValue("@ContractId", contractId);
-                    command.ExecuteNonQuery();
-                }
+                SqlCommand command = new SqlCommand(query, conn);
+                command.Parameters.AddWithValue("@ClientId", clientId);
+                command.Parameters.AddWithValue("@SpecialistId", specialistId);
+                command.Parameters.AddWithValue("@ContractId", contractId);
+                command.ExecuteNonQuery();
             }
         }
+
 
         private int GetClientIdByName(string clientName)
         {
@@ -116,13 +112,14 @@ namespace Pharmacy321
         {
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
-                SqlCommand command = new SqlCommand("SELECT * FROM Dogovor", connection);
+                SqlCommand command = new SqlCommand("SELECT ID_Dogovora, Nomer_Dogovota FROM Dogovor", connection);
                 SqlDataAdapter adapter = new SqlDataAdapter(command);
                 DataTable contracts = new DataTable();
                 adapter.Fill(contracts);
                 return contracts;
             }
         }
+
 
         public void AddEmployee(string fName, string name, string othestvo, string adres, string telefon, string poshta, string doljnost, string shas_rabot)
         {

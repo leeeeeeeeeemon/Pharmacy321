@@ -20,6 +20,10 @@ namespace Pharmacy321
     public partial class SpecialistWindow : Window
     {
         private Database database;
+        private int? SelectedClientId; // Для хранения ID клиента
+        private int? SelectedSpecialistId; // Для хранения ID специалиста
+        private int? SelectedContractId; // Для хранения ID договора
+
 
         public SpecialistWindow()
         {
@@ -71,23 +75,19 @@ namespace Pharmacy321
 
         private void RecordAppointmentButton_Click(object sender, RoutedEventArgs e)
         {
-            string selectedClient = ClientsTextBox.Text.ToLower();
-            var selectedSpecialist = SpecialistsComboBox.SelectedValue; // Это уже значение ID_Sotudnica
-            var selectedContract = ContractsComboBox.SelectedValue; // Это значение ID_Dogovora
-
-            // Проверка на null
-            if (string.IsNullOrWhiteSpace(selectedClient) ||
-                selectedSpecialist == null ||
-                selectedContract == null)
+            if (!SelectedClientId.HasValue ||
+                !SelectedSpecialistId.HasValue ||
+                !SelectedContractId.HasValue)
             {
                 MessageBox.Show("Пожалуйста, выберите клиента, специалиста и договор.");
                 return;
             }
 
-            // Запись на прием в БД
-            database.RecordAppointment(selectedClient, (int)selectedSpecialist, (int)selectedContract);
+            database.RecordAppointment(SelectedClientId.Value, SelectedSpecialistId.Value, SelectedContractId.Value);
             MessageBox.Show("Запись на прием выполнена успешно!");
         }
+
+
 
 
 
@@ -134,26 +134,36 @@ namespace Pharmacy321
             if (ClientsListBox.SelectedItem != null)
             {
                 var selectedClient = ClientsListBox.SelectedItem;
-                ClientsTextBox.Text = (selectedClient as dynamic).FullName; 
+                ClientsTextBox.Text = (selectedClient as dynamic).FullName;
                 ClientsListBox.Visibility = Visibility.Collapsed;
+
+                // Сохранение ID клиента для использования при записи
+                SelectedClientId = (selectedClient as dynamic).ID; // добавьте переменную SelectedClientId в класс
             }
         }
-        protected void LoadContracts()
+
+        private void LoadContracts()
         {
-            DataTable contracts = database.GetContracts(); // Метод для получения договоров
-            if (contracts.Rows.Count > 0)
+            DataTable contracts = database.GetContracts(); // Получаем контракты
+            ContractsComboBox.ItemsSource = contracts.DefaultView;
+            ContractsComboBox.DisplayMemberPath = "Nomer_Dogovota"; // Отображаем номер договора
+            ContractsComboBox.SelectedValuePath = "ID_Dogovora"; // Используем ID_Dogovora как значение
+        }
+
+        private void SpecialistsComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (SpecialistsComboBox.SelectedItem != null)
             {
-                ContractsComboBox.ItemsSource = contracts.DefaultView;
-                ContractsComboBox.DisplayMemberPath = "Description"; // Убедитесь, что это поле существует в таблице
-                ContractsComboBox.SelectedValuePath = "ID_Dogovor"; // Убедитесь, что это поле существует в таблице
-            }
-            else
-            {
-                MessageBox.Show("Нет доступных договоров.");
+                SelectedSpecialistId = (int)SpecialistsComboBox.SelectedValue; // Получаем ID_Sotudnica
             }
         }
 
-
-
+        private void ContractsComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (ContractsComboBox.SelectedItem != null)
+            {
+                SelectedContractId = (int)ContractsComboBox.SelectedValue; // Получаем ID_Dogovora
+            }
+        }
     }
 }
