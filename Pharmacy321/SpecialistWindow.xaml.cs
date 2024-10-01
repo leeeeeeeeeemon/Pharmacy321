@@ -28,6 +28,7 @@ namespace Pharmacy321
             //LoadClients();
             LoadSpecialists();
             LoadClientsGrid();
+            LoadContracts();
         }
 
 
@@ -70,16 +71,27 @@ namespace Pharmacy321
 
         private void RecordAppointmentButton_Click(object sender, RoutedEventArgs e)
         {
-           
             string selectedClient = ClientsTextBox.Text.ToLower();
-            string selectedSpecialist = SpecialistsComboBox.SelectedItem.ToString();
+            var selectedSpecialist = SpecialistsComboBox.SelectedValue; // Это уже значение ID_Sotudnica
+            var selectedContract = ContractsComboBox.SelectedValue; // Это значение ID_Dogovora
 
-            
-            database.RecordAppointment(selectedClient, selectedSpecialist);
+            // Проверка на null
+            if (string.IsNullOrWhiteSpace(selectedClient) ||
+                selectedSpecialist == null ||
+                selectedContract == null)
+            {
+                MessageBox.Show("Пожалуйста, выберите клиента, специалиста и договор.");
+                return;
+            }
+
+            // Запись на прием в БД
+            database.RecordAppointment(selectedClient, (int)selectedSpecialist, (int)selectedContract);
             MessageBox.Show("Запись на прием выполнена успешно!");
         }
 
-      private void LoadClientsGrid()
+
+
+        private void LoadClientsGrid()
 {
     var clients = database.GetClients(); 
     ClientsDataGrid.ItemsSource = clients.DefaultView; 
@@ -126,43 +138,22 @@ namespace Pharmacy321
                 ClientsListBox.Visibility = Visibility.Collapsed;
             }
         }
-        //private void TelefonTextBox_PreviewTextInput(object sender, TextCompositionEventArgs e)
-        //{
-        //    var textBox = sender as TextBox;
-        //    if (textBox != null)
-        //    {
-        //        int cursorPosition = textBox.SelectionStart;
-        //        string currentText = textBox.Text;
+        protected void LoadContracts()
+        {
+            DataTable contracts = database.GetContracts(); // Метод для получения договоров
+            if (contracts.Rows.Count > 0)
+            {
+                ContractsComboBox.ItemsSource = contracts.DefaultView;
+                ContractsComboBox.DisplayMemberPath = "Description"; // Убедитесь, что это поле существует в таблице
+                ContractsComboBox.SelectedValuePath = "ID_Dogovor"; // Убедитесь, что это поле существует в таблице
+            }
+            else
+            {
+                MessageBox.Show("Нет доступных договоров.");
+            }
+        }
 
-        //        if (!char.IsDigit(e.Text[0]))
-        //        {
-        //            e.Handled = true; // Блокируем ввод, если это не цифра
-        //            return;
-        //        }
 
-        //        // Формат телефона +7(___) ___-__-__
-        //        if (currentText.Length < 16)
-        //        {
-        //            currentText = ApplyPhoneMask(currentText, e.Text);
-        //            textBox.Text = currentText;
-        //            textBox.SelectionStart = cursorPosition + 1; // Обновляем позицию курсора
-        //            e.Handled = true; // Блокируем дальнейший ввод, так как мы уже обработали текст
-        //        }
-        //    }
-        //}
 
-        //private string ApplyPhoneMask(string text, string newText)
-        //{
-        //    // Удаляем нецифровые символы из текущего текста
-        //    string digits = new string(text.Where(char.IsDigit).ToArray()) + newText;
-        //    string formattedText = "+7(";
-
-        //    if (digits.Length > 1) formattedText += digits.Substring(1, Math.Min(3, digits.Length - 1));
-        //    if (digits.Length > 4) formattedText += ") " + digits.Substring(4, Math.Min(3, digits.Length - 4));
-        //    if (digits.Length > 7) formattedText += "-" + digits.Substring(7, Math.Min(2, digits.Length - 7));
-        //    if (digits.Length > 9) formattedText += "-" + digits.Substring(9, Math.Min(2, digits.Length - 9));
-
-        //    return formattedText;
-        //}
     }
 }

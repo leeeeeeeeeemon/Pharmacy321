@@ -38,19 +38,24 @@
 					<Button Content="Добавить клиента" Style="{StaticResource MyButtonStyle}" Click="AddClientButton_Click" />
 				</StackPanel>
 			</TabItem>
+            
 			<TabItem Header="Записать клиента на прием">
-				<StackPanel Margin="10">
-					<Label Content="Выберите клиента:" Style="{StaticResource MyLabelStyle}" />
-					<TextBox x:Name="ClientsTextBox" Style="{StaticResource MyTextBoxStyle}" TextChanged="ClientsTextBox_TextChanged" />
-					<ListBox x:Name="ClientsListBox" Style="{StaticResource MyListBoxStyle}" SelectionChanged="ClientsListBox_SelectionChanged" Visibility="Collapsed"/>
+    <StackPanel Margin="10">
+        <Label Content="Выберите клиента:" Style="{StaticResource MyLabelStyle}" />
+        <TextBox x:Name="ClientsTextBox" Style="{StaticResource MyTextBoxStyle}" TextChanged="ClientsTextBox_TextChanged" />
+        <ListBox x:Name="ClientsListBox" Style="{StaticResource MyListBoxStyle}" SelectionChanged="ClientsListBox_SelectionChanged" Visibility="Collapsed"/>
 
-					<Label Content="Специалист:" Style="{StaticResource MyLabelStyle}" />
-					<ComboBox x:Name="SpecialistsComboBox" Style="{StaticResource MyComboBoxStyle}" />
+        <Label Content="Специалист:" Style="{StaticResource MyLabelStyle}" />
+        <ComboBox x:Name="SpecialistsComboBox" Style="{StaticResource MyComboBoxStyle}" />
 
+        <Label Content="Выберите договор:" Style="{StaticResource MyLabelStyle}" />
+        <ComboBox x:Name="ContractsComboBox" Style="{StaticResource MyComboBoxStyle}" />
 
-					<Button Content="Записать на прием" Style="{StaticResource MyButtonStyle}" Click="RecordAppointmentButton_Click" />
-				</StackPanel>
-			</TabItem>
+        <Button Content="Записать на прием" Style="{StaticResource MyButtonStyle}" Click="RecordAppointmentButton_Click" />
+    </StackPanel>
+</TabItem>
+
+            
 			<TabItem Header="Клиенты">
 				<StackPanel Margin="10">
 					<DataGrid x:Name="ClientsDataGrid" AutoGenerateColumns="False" Style="{StaticResource MyDataGridStyle}">

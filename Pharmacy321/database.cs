@@ -67,17 +67,37 @@ namespace Pharmacy321
                 command.ExecuteNonQuery();
             }
         }
-        public void RecordAppointment(string clientName, string specialistName)
+        public void RecordAppointment(string clientName, int specialistId, int contractId)
         {
-            // Логика для записи клиента на прием в базу данных
-            using (SqlConnection conn = new SqlConnection(connectionString))
+            // Получите ID клиента по имени
+            int clientId = GetClientIdByName(clientName);
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
             {
-                conn.Open();
-                string query = "INSERT INTO Appointments (ClientName, SpecialistName) VALUES (@ClientName, @SpecialistName)";
-                SqlCommand command = new SqlCommand(query, conn);
-                command.Parameters.AddWithValue("@ClientName", clientName);
-                command.Parameters.AddWithValue("@SpecialistName", specialistName);
-                command.ExecuteNonQuery();
+                connection.Open();
+                string query = "INSERT INTO Zapis (ID_klienta, ID_Spec_Sotrudnic, ID_Dogovora) VALUES (@ClientId, @SpecialistId, @ContractId)";
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@ClientId", clientId);
+                    command.Parameters.AddWithValue("@SpecialistId", specialistId);
+                    command.Parameters.AddWithValue("@ContractId", contractId);
+                    command.ExecuteNonQuery();
+                }
+            }
+        }
+
+        private int GetClientIdByName(string clientName)
+        {
+            // Метод для получения ID клиента по имени
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
+                string query = "SELECT ID_Klient FROM Klient WHERE LOWER(FName + ' ' + Name) = @ClientName";
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@ClientName", clientName);
+                    return (int)command.ExecuteScalar(); // Возвращает первый найденный ID_Klient
+                }
             }
         }
         public DataTable GetEmployees()
