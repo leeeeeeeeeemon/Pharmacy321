@@ -28,18 +28,26 @@ namespace Pharmacy321
             string FName = FNameTextBox.Text;
             string Name = NameTextBox.Text;
             string Othestvo = OthestvoTextBox.Text;
+            string Adres = AdresTextBox.Text;
+            string Telefon = TelefonTextBox.Text;
+            string Poshta = PoshtaTextBox.Text;
             string Doljnost = DoljnostTextBox.Text;
+            string Shas_Rabot = Shas_RabotTextBox.Text;
 
-            database.AddEmployee(FName, Name, Othestvo, Doljnost); // Метод для добавления сотрудника в БД
+            database.AddEmployee(FName, Name, Othestvo, Adres, Telefon, Poshta, Doljnost, Shas_Rabot); // Метод для добавления сотрудника в БД
             MessageBox.Show("Сотрудник добавлен успешно!");
 
             // Очистка полей после добавления
             FNameTextBox.Clear();
             NameTextBox.Clear();
             OthestvoTextBox.Clear();
+            AdresTextBox.Clear();
+            TelefonTextBox.Clear();
+            PoshtaTextBox.Clear();
             DoljnostTextBox.Clear();
-
+            Shas_RabotTextBox.Clear();
         }
+
 
         private void CreateContractButton_Click(object sender, RoutedEventArgs e)
         {

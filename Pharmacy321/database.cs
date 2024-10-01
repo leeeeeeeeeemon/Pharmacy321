@@ -104,19 +104,25 @@ namespace Pharmacy321
             }
         }
 
-        public void AddEmployee(string fName, string name, string othestvo, string doljnost)
+        public void AddEmployee(string fName, string name, string othestvo, string adres, string telefon, string poshta, string doljnost, string shas_rabot)
         {
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
-                SqlCommand command = new SqlCommand("INSERT INTO Sotrudnic (FName, Name, Othestvo, Doljnost) VALUES (@FName, @Name, @Othestvo, @Doljnost)", connection);
+                SqlCommand command = new SqlCommand("INSERT INTO Sotrudnic (FName, Name, Othestvo, Adres, Telefon, Poshta, Doljnost, Shas_Rabot) VALUES (@FName, @Name, @Othestvo, @Adres, @Telefon, @Poshta, @Doljnost, @Shas_Rabot)", connection);
                 command.Parameters.AddWithValue("@FName", fName);
                 command.Parameters.AddWithValue("@Name", name);
                 command.Parameters.AddWithValue("@Othestvo", othestvo);
+                command.Parameters.AddWithValue("@Adres", adres);
+                command.Parameters.AddWithValue("@Telefon", telefon);
+                command.Parameters.AddWithValue("@Poshta", poshta);
                 command.Parameters.AddWithValue("@Doljnost", doljnost);
+                command.Parameters.AddWithValue("@Shas_Rabot", shas_rabot);
+
                 connection.Open();
                 command.ExecuteNonQuery();
             }
         }
+
 
         public void CreateContract(string Nomer_Dogovota)
         {
