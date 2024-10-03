@@ -32,7 +32,7 @@
         </Style>
     </Page.Resources>
 
-    <Grid>
+    <Grid Background="#FFF8F8F8">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
@@ -41,7 +41,7 @@
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
 
-        <TextBlock Grid.Row="0" Text="Запись на прием" FontSize="48" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,20,0,50" FontWeight="Bold"/>
+        <TextBlock Grid.Row="0" Text="Запись на прием" FontSize="48" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,20,0,50" FontWeight="Bold" Foreground="#333333" />
 
         <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Center">
             <TextBlock Text="Клиент:"/>

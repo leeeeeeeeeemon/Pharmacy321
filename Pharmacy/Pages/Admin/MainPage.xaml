@@ -14,10 +14,11 @@
             <Setter Property="Height" Value="160" />
             <Setter Property="Background" Value="#FFD3E4FF" />
             <Setter Property="Cursor" Value="Hand" />
+            <Setter Property="BorderBrush" Value="Transparent" />
         </Style>
     </Page.Resources>
 
-    <Grid>
+    <Grid Background="#FFF8F8F8">
         <Grid.ColumnDefinitions>
             <ColumnDefinition  />
         </Grid.ColumnDefinitions>

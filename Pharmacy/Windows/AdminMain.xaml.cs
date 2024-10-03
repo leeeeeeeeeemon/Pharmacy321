@@ -33,9 +33,45 @@ namespace Pharmacy.Windows
             Window.GetWindow(this).Close();
         }
 
-        private void TextBlock_PreviewMouseLeftButtonUp(object sender, MouseButtonEventArgs e)
+        private void Nav_PreviewMouseLeftButtonUp(object sender, MouseButtonEventArgs e)
         {
-            MainFrame.Navigate(new MainPage());
+            TextBlock textBlock = sender as TextBlock;
+            if (textBlock != null)
+            {
+                switch (textBlock.Text)
+                {
+                    case "Главная":
+                        MainFrame.Navigate(new MainPage());
+                        break;
+                    case "Записи к врачам":
+                        MainFrame.Navigate(new AppointmentsPage());
+                        break;
+                    case "Сотрудники":
+                        MainFrame.Navigate(new StaffPage());
+                        break;
+                    case "Оборудование":
+                        MainFrame.Navigate(new EquipmentPage());
+                        break;
+                    case "Продажи":
+                        MainFrame.Navigate(new SalesPage());
+                        break;
+                    case "Поставки":
+                        MainFrame.Navigate(new DeliveriesPage());
+                        break;
+                    case "Лекарства":
+                        MainFrame.Navigate(new MedicinesPage());
+                        break;
+                    case "Отчеты":
+                        MainFrame.Navigate(new ReportsPage());
+                        break;
+                    case "Договоры":
+                        MainFrame.Navigate(new ContractsPage());
+                        break;
+                    default:
+                        MainFrame.Navigate(new MainPage());
+                        break;
+                }
+            }
         }
     }
 }

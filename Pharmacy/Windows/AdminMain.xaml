@@ -20,15 +20,15 @@
             </StackPanel>
             <StackPanel Height="7" Background="White" Margin="0,14,0,14" />
             <StackPanel Margin="20,0,0,0">
-                <TextBlock Text="Главная"  Foreground="White" FontSize="20" Margin="0,0,0,16" Cursor="Hand" PreviewMouseLeftButtonUp="TextBlock_PreviewMouseLeftButtonUp" />
-                <TextBlock Text="Записи к врачам"  Foreground="White" FontSize="20" Margin="0,0,0,16" Cursor="Hand" />
-                <TextBlock Text="Сотрудники"  Foreground="White" FontSize="20" Margin="0,0,0,16" Cursor="Hand" />
-                <TextBlock Text="Оборудование"  Foreground="White" FontSize="20" Margin="0,0,0,16" Cursor="Hand" />
-                <TextBlock Text="Продажи"  Foreground="White" FontSize="20" Margin="0,0,0,16" Cursor="Hand" />
-                <TextBlock Text="Поставки"  Foreground="White" FontSize="20" Margin="0,0,0,16" Cursor="Hand" />
-                <TextBlock Text="Лекарства"  Foreground="White" FontSize="20" Margin="0,0,0,16" Cursor="Hand" />
-                <TextBlock Text="Отчеты"  Foreground="White" FontSize="20" Margin="0,0,0,16" Cursor="Hand" />
-                <TextBlock Text="Договоры"  Foreground="White" FontSize="20" Cursor="Hand" />
+                <TextBlock Text="Главная"  Foreground="White" FontSize="20" Margin="0,0,0,16" Cursor="Hand" PreviewMouseLeftButtonUp="Nav_PreviewMouseLeftButtonUp" />
+                <TextBlock Text="Записи к врачам"  Foreground="White" FontSize="20" Margin="0,0,0,16" Cursor="Hand" PreviewMouseLeftButtonUp="Nav_PreviewMouseLeftButtonUp" />
+                <TextBlock Text="Сотрудники"  Foreground="White" FontSize="20" Margin="0,0,0,16" Cursor="Hand" PreviewMouseLeftButtonUp="Nav_PreviewMouseLeftButtonUp" />
+                <TextBlock Text="Оборудование"  Foreground="White" FontSize="20" Margin="0,0,0,16" Cursor="Hand" PreviewMouseLeftButtonUp="Nav_PreviewMouseLeftButtonUp" />
+                <TextBlock Text="Продажи"  Foreground="White" FontSize="20" Margin="0,0,0,16" Cursor="Hand" PreviewMouseLeftButtonUp="Nav_PreviewMouseLeftButtonUp" />
+                <TextBlock Text="Поставки"  Foreground="White" FontSize="20" Margin="0,0,0,16" Cursor="Hand" PreviewMouseLeftButtonUp="Nav_PreviewMouseLeftButtonUp" />
+                <TextBlock Text="Лекарства"  Foreground="White" FontSize="20" Margin="0,0,0,16" Cursor="Hand" PreviewMouseLeftButtonUp="Nav_PreviewMouseLeftButtonUp" />
+                <TextBlock Text="Отчеты"  Foreground="White" FontSize="20" Margin="0,0,0,16" Cursor="Hand" PreviewMouseLeftButtonUp="Nav_PreviewMouseLeftButtonUp" />
+                <TextBlock Text="Договоры"  Foreground="White" FontSize="20" Cursor="Hand" PreviewMouseLeftButtonUp="Nav_PreviewMouseLeftButtonUp" />
             </StackPanel>
             <Button x:Name="Exit" Content="ВЫЙТИ" Background="{x:Null}" BorderBrush="#FFC9C9C9" Foreground="#FFC9C9C9" HorizontalAlignment="Left" VerticalAlignment="Center" Padding="30,10,30,10" FontSize="20" Margin="20,500,0,0" Width="256" Cursor="Hand" Click="Exit_Click"  />
         </StackPanel>
