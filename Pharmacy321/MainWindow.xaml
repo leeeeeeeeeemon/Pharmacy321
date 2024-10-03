@@ -7,6 +7,14 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        <Label Content="Pharmacy"/>
+
+        <StackPanel Grid.Row="1" Margin="10" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <Label Content="ВХОД" FontSize="35" HorizontalAlignment="Center" />
+            <Label Content="Пользователь" Padding="0, 4" FontSize="25" />
+            <ComboBox x:Name="Login_CB" DisplayMemberPath="Surname" SelectedValuePath="ID" BorderBrush="RosyBrown" Height="50" Margin="0,0,0,10" FontSize="24" Width="600" SelectionChanged="Login_CB_SelectionChanged" />
+            <Label Content="Пароль" Padding="0, 4" FontSize="25" />
+            <PasswordBox x:Name="Password_PB" Height="50" BorderBrush="RosyBrown" PasswordChar="●" Width="600" FontSize="24"/>
+            <Button x:Name="Login_Btn" Height="38" Margin="0,20,0,10" Content="Войти" Background="RosyBrown" FontSize="23" Click="Login_Btn_Click" Width="182" HorizontalAlignment="Right" />
+        </StackPanel>
     </Grid>
 </Window>

@@ -20,5 +20,15 @@ namespace Pharmacy321
         {
             InitializeComponent();
         }
+
+        private void Login_Btn_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Login_CB_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
     }
 }
