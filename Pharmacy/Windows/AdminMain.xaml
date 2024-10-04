@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:Pharmacy.Windows"
         mc:Ignorable="d"
         WindowStartupLocation="CenterScreen"
-        Title="AdminMain" Height="1080" Width="1920">
+        Title="AdminMain" Height="1050" Width="1920">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="300" />
@@ -30,9 +30,9 @@
                 <TextBlock Text="Отчеты"  Foreground="White" FontSize="20" Margin="0,0,0,16" Cursor="Hand" PreviewMouseLeftButtonUp="Nav_PreviewMouseLeftButtonUp" />
                 <TextBlock Text="Договоры"  Foreground="White" FontSize="20" Cursor="Hand" PreviewMouseLeftButtonUp="Nav_PreviewMouseLeftButtonUp" />
             </StackPanel>
-            <Button x:Name="Exit" Content="ВЫЙТИ" Background="{x:Null}" BorderBrush="#FFC9C9C9" Foreground="#FFC9C9C9" HorizontalAlignment="Left" VerticalAlignment="Center" Padding="30,10,30,10" FontSize="20" Margin="20,500,0,0" Width="256" Cursor="Hand" Click="Exit_Click"  />
+            <Button x:Name="Exit" Content="ВЫЙТИ" Background="{x:Null}" BorderBrush="#FFC9C9C9" Foreground="#FFC9C9C9" HorizontalAlignment="Left" VerticalAlignment="Center" Padding="30,10,30,10" FontSize="20" Margin="20,470,0,0" Width="256" Cursor="Hand" Click="Exit_Click"  />
         </StackPanel>
 
-        <Frame x:Name="MainFrame" Grid.Column="1" NavigationUIVisibility="Hidden" Width="1620" Height="1080"/>
+        <Frame x:Name="MainFrame" Grid.Column="1" NavigationUIVisibility="Hidden" Width="1620" Height="1030"/>
     </Grid>
 </Window>

@@ -5,7 +5,7 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:Pharmacy.Pages.Admin"
       mc:Ignorable="d" 
-      d:DesignHeight="1080" d:DesignWidth="1620"
+      d:DesignHeight="1030" d:DesignWidth="1620"
       Title="StaffPage">
 
     <Grid Background="#FFF8F8F8">
@@ -18,21 +18,21 @@
             <TextBlock Text="Сотрудники" FontSize="48" FontWeight="Bold" Foreground="#333333"/>
         </StackPanel>
 
-        <DataGrid x:Name="StaffDataGrid" Grid.Row="1" AutoGenerateColumns="False" CanUserAddRows="False" Margin="20" Background="White" BorderBrush="#CCCCCC" BorderThickness="1" RowBackground="White" AlternatingRowBackground="#F9F9F9" VerticalGridLinesBrush="#DDDDDD" HorizontalGridLinesBrush="#DDDDDD">
+        <DataGrid x:Name="StaffDataGrid" Grid.Row="1" AutoGenerateColumns="False" CanUserAddRows="False" Margin="10,20,20,20" Background="White" BorderBrush="#CCCCCC" BorderThickness="1" RowBackground="White" AlternatingRowBackground="#F9F9F9" VerticalGridLinesBrush="#DDDDDD" HorizontalGridLinesBrush="#DDDDDD" FontSize="16">
             <DataGrid.Columns>
-                <DataGridTextColumn Header="ID" Binding="{Binding Id}" Width="Auto" IsReadOnly="True"/>
-                <DataGridTextColumn Header="Пароль" Binding="{Binding Password}" Width="Auto" IsReadOnly="True"/>
-                <DataGridTextColumn Header="Фамилия" Binding="{Binding Surname}" Width="*" IsReadOnly="True"/>
-                <DataGridTextColumn Header="Имя" Binding="{Binding Name}" Width="*" IsReadOnly="True"/>
-                <DataGridTextColumn Header="Отчество" Binding="{Binding Patronymic}" Width="*" IsReadOnly="True"/>
-                <DataGridTextColumn Header="Должность" Binding="{Binding Doljnost}" Width="*" IsReadOnly="True"/>
-                <DataGridTextColumn Header="Телефон" Binding="{Binding Phone}" Width="*" IsReadOnly="True"/>
-                <DataGridTextColumn Header="Email" Binding="{Binding Email}" Width="*" IsReadOnly="True"/>
-                <DataGridTextColumn Header="Город" Binding="{Binding Address.City}" Width="*" IsReadOnly="True"/>
-                <DataGridTextColumn Header="Улица" Binding="{Binding Address.Street}" Width="*" IsReadOnly="True"/>
-                <DataGridTextColumn Header="Дом" Binding="{Binding Address.House}" Width="*" IsReadOnly="True"/>
-                <DataGridTextColumn Header="Корпус" Binding="{Binding Address.Corps}" Width="*" IsReadOnly="True"/>
-                <DataGridTextColumn Header="Квартира" Binding="{Binding Address.Apartment}" Width="*" IsReadOnly="True"/>
+                <DataGridTextColumn Header="ID" Binding="{Binding Id}" Width="Auto" IsReadOnly="True" FontSize="16"/>
+                <DataGridTextColumn Header="Пароль" Binding="{Binding Password}" Width="Auto" IsReadOnly="True" FontSize="16"/>
+                <DataGridTextColumn Header="Фамилия" Binding="{Binding Surname}" Width="*" IsReadOnly="True" FontSize="16"/>
+                <DataGridTextColumn Header="Имя" Binding="{Binding Name}" Width="*" IsReadOnly="True" FontSize="16"/>
+                <DataGridTextColumn Header="Отчество" Binding="{Binding Patronymic}" Width="*" IsReadOnly="True" FontSize="16"/>
+                <DataGridTextColumn Header="Должность" Binding="{Binding Doljnost}" Width="*" IsReadOnly="True" FontSize="16"/>
+                <DataGridTextColumn Header="Телефон" Binding="{Binding Phone}" Width="*" IsReadOnly="True" FontSize="16"/>
+                <DataGridTextColumn Header="Email" Binding="{Binding Email}" Width="*" IsReadOnly="True" FontSize="16"/>
+                <DataGridTextColumn Header="Город" Binding="{Binding Address.City}" Width="*" IsReadOnly="True" FontSize="16"/>
+                <DataGridTextColumn Header="Улица" Binding="{Binding Address.Street}" Width="*" IsReadOnly="True" FontSize="16"/>
+                <DataGridTextColumn Header="Дом" Binding="{Binding Address.House}" Width="*" IsReadOnly="True" FontSize="16"/>
+                <DataGridTextColumn Header="Корпус" Binding="{Binding Address.Corps}" Width="*" IsReadOnly="True" FontSize="16"/>
+                <DataGridTextColumn Header="Квартира" Binding="{Binding Address.Apartment}" Width="*" IsReadOnly="True" FontSize="16"/>
             </DataGrid.Columns>
         </DataGrid>
     </Grid>

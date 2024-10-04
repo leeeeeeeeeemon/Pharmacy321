@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:Pharmacy"
         mc:Ignorable="d"
         WindowStartupLocation="CenterScreen"
-        Title="Authorization" Height="1080" Width="1920">
+        Title="Authorization" Height="1050" Width="1920">
     <Grid>
         <Label Content="АПТЕКА" FontWeight="Bold" FontSize="72" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,100,0,0"/>
 

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Pharmacy.Data;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,6 +21,13 @@ namespace Pharmacy.Pages.Admin
         public AppointmentsPage()
         {
             InitializeComponent();
+            LoadAppointmentsData();
+        }
+
+        private void LoadAppointmentsData()
+        {
+            List<Zapis_priem> staffList = DBManager.GetAppointments();
+            AppointmentsDataGrid.ItemsSource = staffList;
         }
     }
 }
