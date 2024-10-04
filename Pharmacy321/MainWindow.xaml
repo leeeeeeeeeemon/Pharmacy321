@@ -7,6 +7,14 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        <Label Content="Pharmacy"/>
+        <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+            <Button x:Name="ClientsButton" Content="Clients" Width="100" Margin="0,0,0,10" Click="ClientsButton_Click" Visibility="Collapsed" Style="{StaticResource BaseButtonStyle}"/>
+            <Button x:Name="EmployeesButton" Content="Employees" Width="100" Margin="0,0,0,10" Click="EmployeesButton_Click" Visibility="Collapsed" Style="{StaticResource BaseButtonStyle}"/>
+            <Button x:Name="MedicationsButton" Content="Medications" Width="100" Margin="0,0,0,10" Click="MedicationsButton_Click" Visibility="Collapsed" Style="{StaticResource BaseButtonStyle}"/>
+            <Button x:Name="OrdersButton" Content="Orders" Width="100" Margin="0,0,0,10" Click="OrdersButton_Click" Visibility="Collapsed" Style="{StaticResource BaseButtonStyle}"/>
+            <Button x:Name="ProvidersButton" Content="Providers" Width="100" Margin="0,0,0,10" Click="ProvidersButton_Click" Visibility="Collapsed" Style="{StaticResource BaseButtonStyle}"/>
+            <Button x:Name="ContractsButton" Content="Contracts" Width="100" Margin="0,0,0,10" Click="ContractsButton_Click" Visibility="Collapsed" Style="{StaticResource BaseButtonStyle}"/>
+        </StackPanel>
+        <Button x:Name="LogoutButton" Content="Logout" Width="100" Height="30" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,10,10,0" Click="LogoutButton_Click" Style="{StaticResource LogoutButtonStyle}"/>
     </Grid>
 </Window>

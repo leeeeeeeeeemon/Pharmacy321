@@ -1,0 +1,60 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <!-- Базовый стиль для кнопок -->
+    <Style x:Key="BaseButtonStyle" TargetType="Button">
+        <Setter Property="Background" Value="#4CAF50"/>
+        <!-- Зеленый цвет -->
+        <Setter Property="Foreground" Value="White"/>
+        <!-- Белый цвет текста -->
+        <Setter Property="BorderBrush" Value="#4CAF50"/>
+        <!-- Зеленый цвет границы -->
+        <Setter Property="BorderThickness" Value="2"/>
+        <Setter Property="Padding" Value="10,5"/>
+        <Setter Property="FontSize" Value="14"/>
+        <Setter Property="FontWeight" Value="Bold"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Border Background="{TemplateBinding Background}"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            BorderThickness="{TemplateBinding BorderThickness}">
+                        <ContentPresenter HorizontalAlignment="Center"
+                                          VerticalAlignment="Center"/>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Background" Value="#66BB6A"/>
+                <!-- Светло-зеленый цвет при наведении -->
+                <Setter Property="BorderBrush" Value="#66BB6A"/>
+            </Trigger>
+            <Trigger Property="IsPressed" Value="True">
+                <Setter Property="Background" Value="#388E3C"/>
+                <!-- Темно-зеленый цвет при нажатии -->
+                <Setter Property="BorderBrush" Value="#388E3C"/>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+    <!-- Стиль для кнопки выхода -->
+    <Style x:Key="LogoutButtonStyle" TargetType="Button" BasedOn="{StaticResource BaseButtonStyle}">
+        <Setter Property="Background" Value="#F44336"/>
+        <!-- Красный цвет для кнопки выхода -->
+        <Setter Property="BorderBrush" Value="#F44336"/>
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Background" Value="#E57373"/>
+                <!-- Светло-красный цвет при наведении -->
+                <Setter Property="BorderBrush" Value="#E57373"/>
+            </Trigger>
+            <Trigger Property="IsPressed" Value="True">
+                <Setter Property="Background" Value="#D32F2F"/>
+                <!-- Темно-красный цвет при нажатии -->
+                <Setter Property="BorderBrush" Value="#D32F2F"/>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+</ResourceDictionary>

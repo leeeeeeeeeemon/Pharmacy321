@@ -1,0 +1,20 @@
+﻿<Window x:Class="Pharmacy321.OrdersWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Pharmacy321"
+        mc:Ignorable="d"
+        Title="OrdersWindow" Height="450" Width="800">
+    <Grid>
+        <ListView ItemsSource="{Binding Orders}">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="ID" DisplayMemberBinding="{Binding ID_Order}" />
+                    <GridViewColumn Header="Order Date" DisplayMemberBinding="{Binding Order_Date}" />
+                    <GridViewColumn Header="Shipment Date" DisplayMemberBinding="{Binding Shipment_Date}" />
+                </GridView>
+            </ListView.View>
+        </ListView>
+    </Grid>
+</Window>
