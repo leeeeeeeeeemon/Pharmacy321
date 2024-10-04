@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="b5e5214f879243e59b2b920d3427045f" Name="Diagram1">
+        <EntityTypeShape EntityType="Pharmacy_MDKModel.Adres" Width="1.5" PointX="0.75" PointY="9" IsExpanded="true" />
+        <EntityTypeShape EntityType="Pharmacy_MDKModel.chek" Width="1.5" PointX="7.5" PointY="6.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Pharmacy_MDKModel.Dogovor" Width="1.5" PointX="6" PointY="17" IsExpanded="true" />
+        <EntityTypeShape EntityType="Pharmacy_MDKModel.Kategoriya_materiala" Width="1.5" PointX="3" PointY="21.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Pharmacy_MDKModel.Klient" Width="1.5" PointX="3" PointY="17.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Pharmacy_MDKModel.Material" Width="1.5" PointX="5.25" PointY="12.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Pharmacy_MDKModel.Mesto_hraneniya" Width="1.5" PointX="3" PointY="24.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Pharmacy_MDKModel.Oborydovaniye" Width="1.5" PointX="8.25" PointY="12.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Pharmacy_MDKModel.Pokypki" Width="1.5" PointX="5.25" PointY="8.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Pharmacy_MDKModel.Postavshiki" Width="1.5" PointX="3" PointY="4.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Pharmacy_MDKModel.Preparat" Width="1.5" PointX="0.75" PointY="5.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Pharmacy_MDKModel.Priem" Width="1.5" PointX="8.25" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Pharmacy_MDKModel.Scheta" Width="1.5" PointX="8.25" PointY="17.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Pharmacy_MDKModel.Sotrydniki" Width="1.5" PointX="3" PointY="8" IsExpanded="true" />
+        <EntityTypeShape EntityType="Pharmacy_MDKModel.Vrachi" Width="1.5" PointX="3" PointY="12" IsExpanded="true" />
+        <EntityTypeShape EntityType="Pharmacy_MDKModel.zakaz" Width="1.5" PointX="5.25" PointY="4.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Pharmacy_MDKModel.zapros_zakaz" Width="1.5" PointX="3" PointY="0.75" IsExpanded="true" />
+        <AssociationConnector Association="Pharmacy_MDKModel.FK_Postavshiki_Adres" ManuallyRouted="false" />
+        <AssociationConnector Association="Pharmacy_MDKModel.FK_Sotrydniki_Adres" ManuallyRouted="false" />
+        <AssociationConnector Association="Pharmacy_MDKModel.FK_Vrachi_Adres" ManuallyRouted="false" />
+        <AssociationConnector Association="Pharmacy_MDKModel.FK_chek_Pokypki" ManuallyRouted="false" />
+        <AssociationConnector Association="Pharmacy_MDKModel.FK_chek_Preparat" ManuallyRouted="false" />
+        <AssociationConnector Association="Pharmacy_MDKModel.FK_Priem_Dogovor" ManuallyRouted="false" />
+        <AssociationConnector Association="Pharmacy_MDKModel.FK_Scheta_Dogovor" ManuallyRouted="false" />
+        <AssociationConnector Association="Pharmacy_MDKModel.FK_Material_Kategoriya_materiala" ManuallyRouted="false" />
+        <AssociationConnector Association="Pharmacy_MDKModel.FK_Pokypki_Klient" ManuallyRouted="false" />
+        <AssociationConnector Association="Pharmacy_MDKModel.FK_Priem_Klient" ManuallyRouted="false" />
+        <AssociationConnector Association="Pharmacy_MDKModel.FK_Material_Mesto_hraneniya" ManuallyRouted="false" />
+        <AssociationConnector Association="Pharmacy_MDKModel.FK_Material_Vrachi" ManuallyRouted="false" />
+        <AssociationConnector Association="Pharmacy_MDKModel.FK_Oborydovaniye_Mesto_hraneniya" ManuallyRouted="false" />
+        <AssociationConnector Association="Pharmacy_MDKModel.FK_Oborydovaniye_Vrachi" ManuallyRouted="false" />
+        <AssociationConnector Association="Pharmacy_MDKModel.FK_Pokypki_Sotrydniki" ManuallyRouted="false" />
+        <AssociationConnector Association="Pharmacy_MDKModel.FK_zakaz_Postavshiki" ManuallyRouted="false" />
+        <AssociationConnector Association="Pharmacy_MDKModel.FK_zapros_zakaz_Preparat" ManuallyRouted="false" />
+        <AssociationConnector Association="Pharmacy_MDKModel.FK_zapros_zakaz_Preparat1" ManuallyRouted="false" />
+        <AssociationConnector Association="Pharmacy_MDKModel.FK_Priem_Vrachi" ManuallyRouted="false" />
+        <AssociationConnector Association="Pharmacy_MDKModel.FK_zakaz_zapros_zakaz" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
