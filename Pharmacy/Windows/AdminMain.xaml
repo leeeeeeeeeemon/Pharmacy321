@@ -21,14 +21,15 @@
             <StackPanel Height="7" Background="White" Margin="0,14,0,14" />
             <StackPanel Margin="20,0,0,0">
                 <TextBlock Text="Главная"  Foreground="White" FontSize="20" Margin="0,0,0,16" Cursor="Hand" PreviewMouseLeftButtonUp="Nav_PreviewMouseLeftButtonUp" />
-                <TextBlock Text="Записи к врачам"  Foreground="White" FontSize="20" Margin="0,0,0,16" Cursor="Hand" PreviewMouseLeftButtonUp="Nav_PreviewMouseLeftButtonUp" />
-                <TextBlock Text="Сотрудники"  Foreground="White" FontSize="20" Margin="0,0,0,16" Cursor="Hand" PreviewMouseLeftButtonUp="Nav_PreviewMouseLeftButtonUp" />
-                <TextBlock Text="Оборудование"  Foreground="White" FontSize="20" Margin="0,0,0,16" Cursor="Hand" PreviewMouseLeftButtonUp="Nav_PreviewMouseLeftButtonUp" />
-                <TextBlock Text="Продажи"  Foreground="White" FontSize="20" Margin="0,0,0,16" Cursor="Hand" PreviewMouseLeftButtonUp="Nav_PreviewMouseLeftButtonUp" />
-                <TextBlock Text="Поставки"  Foreground="White" FontSize="20" Margin="0,0,0,16" Cursor="Hand" PreviewMouseLeftButtonUp="Nav_PreviewMouseLeftButtonUp" />
-                <TextBlock Text="Лекарства"  Foreground="White" FontSize="20" Margin="0,0,0,16" Cursor="Hand" PreviewMouseLeftButtonUp="Nav_PreviewMouseLeftButtonUp" />
-                <TextBlock Text="Отчеты"  Foreground="White" FontSize="20" Margin="0,0,0,16" Cursor="Hand" PreviewMouseLeftButtonUp="Nav_PreviewMouseLeftButtonUp" />
-                <TextBlock Text="Договоры"  Foreground="White" FontSize="20" Cursor="Hand" PreviewMouseLeftButtonUp="Nav_PreviewMouseLeftButtonUp" />
+                <TextBlock x:Name="AppointmentsTB"  Text="Записи к врачам"  Foreground="White" FontSize="20" Margin="0,0,0,16" Cursor="Hand" PreviewMouseLeftButtonUp="Nav_PreviewMouseLeftButtonUp" />
+                <TextBlock x:Name="StaffTB" Text="Сотрудники"  Foreground="White" FontSize="20" Margin="0,0,0,16" Cursor="Hand" PreviewMouseLeftButtonUp="Nav_PreviewMouseLeftButtonUp" />
+                <TextBlock x:Name="DeliversTB" Text="Поставщики"  Foreground="White" FontSize="20" Margin="0,0,0,16" Cursor="Hand" PreviewMouseLeftButtonUp="Nav_PreviewMouseLeftButtonUp" />
+                <TextBlock x:Name="EquipmentTB" Text="Оборудование"  Foreground="White" FontSize="20" Margin="0,0,0,16" Cursor="Hand" PreviewMouseLeftButtonUp="Nav_PreviewMouseLeftButtonUp" />
+                <TextBlock x:Name="SalesTB" Text="Продажи"  Foreground="White" FontSize="20" Margin="0,0,0,16" Cursor="Hand" PreviewMouseLeftButtonUp="Nav_PreviewMouseLeftButtonUp" />
+                <TextBlock x:Name="DeliveriesTB" Text="Поставки"  Foreground="White" FontSize="20" Margin="0,0,0,16" Cursor="Hand" PreviewMouseLeftButtonUp="Nav_PreviewMouseLeftButtonUp" />
+                <TextBlock x:Name="MedicinesTB" Text="Лекарства"  Foreground="White" FontSize="20" Margin="0,0,0,16" Cursor="Hand" PreviewMouseLeftButtonUp="Nav_PreviewMouseLeftButtonUp" />
+                <TextBlock x:Name="ReportsTB" Text="Отчеты"  Foreground="White" FontSize="20" Margin="0,0,0,16" Cursor="Hand" PreviewMouseLeftButtonUp="Nav_PreviewMouseLeftButtonUp" />
+                <TextBlock x:Name="ContractsTB" Text="Договоры"  Foreground="White" FontSize="20" Cursor="Hand" PreviewMouseLeftButtonUp="Nav_PreviewMouseLeftButtonUp" />
             </StackPanel>
             <Button x:Name="Exit" Content="ВЫЙТИ" Background="{x:Null}" BorderBrush="#FFC9C9C9" Foreground="#FFC9C9C9" HorizontalAlignment="Left" VerticalAlignment="Center" Padding="30,10,30,10" FontSize="20" Margin="20,470,0,0" Width="256" Cursor="Hand" Click="Exit_Click"  />
         </StackPanel>

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Pharmacy.Pages.Admin;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
@@ -34,6 +35,11 @@ namespace Pharmacy.Data
             return _context.Sotrudnik.ToList();
         }
 
+        public static List<Postavshik> GetDelivers()
+        {
+            return _context.Postavshik.ToList();
+        }
+
         public static List<Klient> GetClients()
         {
             return _context.Klient.ToList();
@@ -44,11 +50,35 @@ namespace Pharmacy.Data
             return _context.Zapis_priem.ToList();
         }
 
+        public static List<Material_Oborudovanie> GetEquipment()
+        {
+            return _context.Material_Oborudovanie.ToList();
+        }
+
+        public static List<Dogovor> GetContracts()
+        {
+            return _context.Dogovor.ToList();
+        }
+
         public static bool MakeAppointment(Zapis_priem appointment)
         {
             try
             {
                 _context.Zapis_priem.Add(appointment);
+                UpdateDatabase();
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
+        public static bool AddClient(Klient k)
+        {
+            try
+            {
+                _context.Klient.Add(k);
                 UpdateDatabase();
                 return true;
             }

@@ -35,7 +35,7 @@ namespace Pharmacy.Pages.Admin
 
         private void RegisterClient_Click(object sender, RoutedEventArgs e)
         {
-
+            NavigationService.Navigate(new RegisterClientPage());
         }
 
         private void MakeReport_Click(object sender, RoutedEventArgs e)

@@ -16,18 +16,18 @@ using System.Windows.Shapes;
 
 namespace Pharmacy.Pages.Admin
 {
-    public partial class ContractsPage : Page
+    public partial class DeliversPage : Page
     {
-        public ContractsPage()
+        public DeliversPage()
         {
             InitializeComponent();
-            LoadContactsData();
+            LoadDeliversData();
         }
 
-        private void LoadContactsData()
+        private void LoadDeliversData()
         {
-            List<Dogovor> contractsList = DBManager.GetContracts();
-            AppointmentsDataGrid.ItemsSource = contractsList;
+            List<Postavshik> deliversList = DBManager.GetDelivers();
+            StaffDataGrid.ItemsSource = deliversList;
         }
     }
 }

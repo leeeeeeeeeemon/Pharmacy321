@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Pharmacy.Data;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -31,32 +32,29 @@ namespace Pharmacy.Pages.Admin
             string email = EmailTextBox.Text;
             string skidka = SkidkaTextBox.Text;
 
-            if (string.IsNullOrWhiteSpace(surname) || string.IsNullOrWhiteSpace(name) || string.IsNullOrWhiteSpace(phone))
+            try
             {
-                MessageBox.Show("Пожалуйста, заполните все обязательные поля.");
-                return;
-            }
-
-            var newClient = new Klient
+                var newClient = new Klient
+                {
+                    Surname = surname,
+                    Name = name,
+                    Patronymic = String.IsNullOrEmpty(patronymic) ? "" : patronymic,
+                    Phone = phone,
+                    Email = email,
+                    Skidka = String.IsNullOrEmpty(skidka) ? 0 : Convert.ToDecimal(skidka),
+                };
+                DBManager.AddClient(newClient);
+                MessageBox.Show("Успех!", "Регистрация клиента", MessageBoxButton.OK, MessageBoxImage.Information);
+                SurnameTextBox.Text = "";
+                NameTextBox.Text = "";
+                PatronymicTextBox.Text = "";
+                PhoneTextBox.Text = "";
+                EmailTextBox.Text = "";
+                SkidkaTextBox.Text = "";
+            } catch
             {
-                Surname = surname,
-                Name = name,
-                Patronymic = patronymic,
-                Phone = phone,
-                Email = email,
-                Skidka = Convert.ToDecimal(skidka),
-            };
-
-            // добавить в бд
-
-            SurnameTextBox.Text = "";
-            NameTextBox.Text = "";
-            PatronymicTextBox.Text = "";
-            PhoneTextBox.Text = "";
-            EmailTextBox.Text = "";
-            SkidkaTextBox.Text = "";
-
-            MessageBox.Show("Клиент успешно зарегистрирован!");
+                MessageBox.Show("Проверьте корректность заполнения полей!", "Ошибка заполнения", MessageBoxButton.OK, MessageBoxImage.Error);
+            }          
         }
     }
 }

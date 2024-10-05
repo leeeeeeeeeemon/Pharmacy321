@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Pharmacy.Data;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -15,14 +16,18 @@ using System.Windows.Shapes;
 
 namespace Pharmacy.Pages.Admin
 {
-    /// <summary>
-    /// Логика взаимодействия для EquipmentPage.xaml
-    /// </summary>
     public partial class EquipmentPage : Page
     {
         public EquipmentPage()
         {
             InitializeComponent();
+            LoadEquipmentData();
+        }
+
+        private void LoadEquipmentData()
+        {
+            List<Material_Oborudovanie> equipmentList = DBManager.GetEquipment();
+            StaffDataGrid.ItemsSource = equipmentList;
         }
     }
 }

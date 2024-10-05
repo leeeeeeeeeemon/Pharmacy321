@@ -126,11 +126,17 @@
     <Compile Include="Pages\Admin\MedicinesPage.xaml.cs">
       <DependentUpon>MedicinesPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\Admin\RegisterClientPage.xaml.cs">
+      <DependentUpon>RegisterClientPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\Admin\ReportsPage.xaml.cs">
       <DependentUpon>ReportsPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\Admin\SalesPage.xaml.cs">
       <DependentUpon>SalesPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Admin\DeliversPage.xaml.cs">
+      <DependentUpon>DeliversPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\Admin\StaffPage.xaml.cs">
       <DependentUpon>StaffPage.xaml</DependentUpon>
@@ -205,6 +211,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Pages\Admin\RegisterClientPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Pages\Admin\ReportsPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -212,6 +222,10 @@
     <Page Include="Pages\Admin\SalesPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\Admin\DeliversPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="Pages\Admin\StaffPage.xaml">
       <SubType>Designer</SubType>

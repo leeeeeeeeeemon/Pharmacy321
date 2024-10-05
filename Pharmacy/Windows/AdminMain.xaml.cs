@@ -25,6 +25,25 @@ namespace Pharmacy.Windows
             userName.Text = _currentEmployee.Surname + " " + _currentEmployee.Name;
             userProfession.Text = _currentEmployee.Doljnost;
             MainFrame.Navigate(new MainPage());
+
+            if (sotrudnik.Doljnost == "Фармацевт")
+            {
+                AppointmentsTB.Visibility = Visibility.Collapsed;
+                StaffTB.Visibility = Visibility.Collapsed;
+                DeliveriesTB.Visibility = Visibility.Collapsed;
+                EquipmentTB.Visibility = Visibility.Collapsed;
+                DeliveriesTB.Visibility = Visibility.Collapsed;
+                ReportsTB.Visibility = Visibility.Collapsed;
+                ContractsTB.Visibility = Visibility.Collapsed;
+            } else if (sotrudnik.Doljnost == "Окулист" || sotrudnik.Doljnost == "Ортопед")
+            {
+                StaffTB.Visibility = Visibility.Collapsed;
+                DeliveriesTB.Visibility = Visibility.Collapsed;
+                EquipmentTB.Visibility = Visibility.Collapsed;
+                DeliveriesTB.Visibility = Visibility.Collapsed;
+                ReportsTB.Visibility = Visibility.Collapsed;
+                ContractsTB.Visibility = Visibility.Collapsed;
+            }
         }
 
         private void Exit_Click(object sender, RoutedEventArgs e)
@@ -48,6 +67,9 @@ namespace Pharmacy.Windows
                         break;
                     case "Сотрудники":
                         MainFrame.Navigate(new StaffPage());
+                        break;
+                    case "Поставщики":
+                        MainFrame.Navigate(new DeliversPage());
                         break;
                     case "Оборудование":
                         MainFrame.Navigate(new EquipmentPage());

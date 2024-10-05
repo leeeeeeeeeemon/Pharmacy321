@@ -17,5 +17,18 @@
         <StackPanel Grid.Row="0" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,20,0,20">
             <TextBlock Text="Оборудование" FontSize="48" FontWeight="Bold" Foreground="#333333" />
         </StackPanel>
+
+        <DataGrid x:Name="StaffDataGrid" Grid.Row="1" AutoGenerateColumns="False" CanUserAddRows="False" Margin="10,20,20,20" Background="White" BorderBrush="#CCCCCC" BorderThickness="1" RowBackground="White" AlternatingRowBackground="#F9F9F9" VerticalGridLinesBrush="#DDDDDD" HorizontalGridLinesBrush="#DDDDDD" FontSize="16">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="ID" Binding="{Binding Id}" Width="Auto" IsReadOnly="True" FontSize="16"/>
+                <DataGridTextColumn Header="Наименование" Binding="{Binding Name}" Width="Auto" IsReadOnly="True" FontSize="16"/>
+                <DataGridTextColumn Header="Склад" Binding="{Binding Sklad.Name}" Width="*" IsReadOnly="True" FontSize="16"/>
+                <DataGridTextColumn Header="Номер стеллажа" Binding="{Binding Number_stellazh}" Width="*" IsReadOnly="True" FontSize="16"/>
+                <DataGridTextColumn Header="Категория" Binding="{Binding Category.Name}" Width="*" IsReadOnly="True" FontSize="16"/>
+                <DataGridTextColumn Header="Срок хранения" Binding="{Binding Srok_hranenia}" Width="*" IsReadOnly="True" FontSize="16"/>
+                <DataGridTextColumn Header="Минимальный остаток" Binding="{Binding Min_ostatok}" Width="*" IsReadOnly="True" FontSize="16"/>
+                <DataGridTextColumn Header="Остаток" Binding="{Binding Ostatok}" Width="*" IsReadOnly="True" FontSize="16"/>
+            </DataGrid.Columns>
+        </DataGrid>
     </Grid>
 </Page>
