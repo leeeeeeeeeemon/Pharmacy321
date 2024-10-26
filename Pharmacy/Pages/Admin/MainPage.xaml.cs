@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Pharmacy.Data;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -17,9 +18,11 @@ namespace Pharmacy.Pages.Admin
 {
     public partial class MainPage : Page
     {
-        public MainPage()
+        private Sotrudnik _currentEmployee;
+        public MainPage(Sotrudnik sotrudnik)
         {
             InitializeComponent();
+            _currentEmployee = sotrudnik;
         }
 
 

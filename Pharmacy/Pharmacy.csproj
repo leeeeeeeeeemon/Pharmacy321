@@ -65,44 +65,71 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Address.cs">
+    <Compile Include="Data\Address.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
-    <Compile Include="Category.cs">
+    <Compile Include="Data\Category.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
-    <Compile Include="Contacts.cs">
+    <Compile Include="Data\Contacts.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
     <Compile Include="Data\DBManager.cs" />
-    <Compile Include="Dogovor.cs">
+    <Compile Include="Data\Dogovor.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
-    <Compile Include="Graphik.cs">
+    <Compile Include="Data\Graphik.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
-    <Compile Include="Klient.cs">
+    <Compile Include="Data\Klient.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
-    <Compile Include="Material_Oborudovanie.cs">
+    <Compile Include="Data\Material_Oborudovanie.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
-    <Compile Include="Model.Context.cs">
+    <Compile Include="Data\Model.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Model.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="Model.cs">
+    <Compile Include="Data\Model.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
-    <Compile Include="Model.Designer.cs">
+    <Compile Include="Data\Model.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Model.edmx</DependentUpon>
     </Compile>
-    <Compile Include="Ostatok_preparat.cs">
+    <Compile Include="Data\Ostatok_preparat.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\Postavka.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\Postavshik.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\Preparat.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\Shopping_history.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\Sklad.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\Sotrudnik.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\sysdiagrams.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\Zakaz.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\Zapis_priem.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
     <Compile Include="Pages\Admin\AppointmentsPage.xaml.cs">
@@ -141,35 +168,11 @@
     <Compile Include="Pages\Admin\StaffPage.xaml.cs">
       <DependentUpon>StaffPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Postavka.cs">
-      <DependentUpon>Model.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Postavshik.cs">
-      <DependentUpon>Model.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Preparat.cs">
-      <DependentUpon>Model.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Shopping_history.cs">
-      <DependentUpon>Model.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Sklad.cs">
-      <DependentUpon>Model.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Sotrudnik.cs">
-      <DependentUpon>Model.tt</DependentUpon>
-    </Compile>
     <Compile Include="Windows\AdminMain.xaml.cs">
       <DependentUpon>AdminMain.xaml</DependentUpon>
     </Compile>
     <Compile Include="Windows\AuthorizationWindow.xaml.cs">
       <DependentUpon>AuthorizationWindow.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Zakaz.cs">
-      <DependentUpon>Model.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Zapis_priem.cs">
-      <DependentUpon>Model.tt</DependentUpon>
     </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -258,11 +261,11 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EntityDeploy Include="Model.edmx">
+    <EntityDeploy Include="Data\Model.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>Model.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <None Include="Model.edmx.diagram">
+    <None Include="Data\Model.edmx.diagram">
       <DependentUpon>Model.edmx</DependentUpon>
     </None>
     <None Include="packages.config" />
@@ -287,12 +290,12 @@
     <Resource Include="img\icons\user.png" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Model.Context.tt">
+    <Content Include="Data\Model.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>Model.edmx</DependentUpon>
       <LastGenOutput>Model.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="Model.tt">
+    <Content Include="Data\Model.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>Model.edmx</DependentUpon>
       <LastGenOutput>Model.cs</LastGenOutput>

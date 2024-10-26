@@ -73,7 +73,11 @@ namespace Pharmacy.Pages.Admin
             }
 
             LoadAppointments();
+            GetAvailableTimes();           
+        }
 
+        private void GetAvailableTimes()
+        {
             var doctor = (Sotrudnik)DoctorComboBox.SelectedItem;
             var date = AppointmentDatePicker.SelectedDate.Value;
 
@@ -152,6 +156,14 @@ namespace Pharmacy.Pages.Admin
             AppointmentDatePicker.SelectedDate = null;
             AppointmentTimeComboBox.SelectedItem = null;
             isUserInitiated = true;
+        }
+
+        private void DoctorComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            AppointmentTimeComboBox.SelectedItem = null;
+
+            if (AppointmentDatePicker.SelectedDate != null)
+                GetAvailableTimes();
         }
     }
 }

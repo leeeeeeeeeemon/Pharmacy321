@@ -18,16 +18,22 @@ namespace Pharmacy.Pages.Admin
 {
     public partial class AppointmentsPage : Page
     {
-        public AppointmentsPage()
+        private Sotrudnik _currentEmployee;
+        private List<Zapis_priem> _staffList;
+        public AppointmentsPage(Sotrudnik sotrudnik)
         {
             InitializeComponent();
+            _currentEmployee = sotrudnik;
             LoadAppointmentsData();
         }
 
         private void LoadAppointmentsData()
         {
-            List<Zapis_priem> staffList = DBManager.GetAppointments();
-            AppointmentsDataGrid.ItemsSource = staffList;
+            if (_currentEmployee.Id == 1)
+                _staffList = DBManager.GetAppointments();
+            else
+                _staffList = DBManager.GetAppointments().Where(z => z.Id_sotrudnik == _currentEmployee.Id).ToList();
+            AppointmentsDataGrid.ItemsSource = _staffList;
         }
     }
 }

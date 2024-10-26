@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="b7f686af575b4a6a9ebe9083769b316d" Name="Diagram1">
+        <EntityTypeShape EntityType="PharmacyModel.Address" Width="1.5" PointX="0.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PharmacyModel.Category" Width="1.5" PointX="7.75" PointY="10" IsExpanded="true" />
+        <EntityTypeShape EntityType="PharmacyModel.Contacts" Width="1.5" PointX="0.75" PointY="3.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="PharmacyModel.Dogovor" Width="1.5" PointX="0.75" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PharmacyModel.Graphik" Width="1.5" PointX="5.25" PointY="11.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="PharmacyModel.Klient" Width="1.5" PointX="3" PointY="2.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PharmacyModel.Material_Oborudovanie" Width="1.5" PointX="10" PointY="9.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="PharmacyModel.Ostatok_preparat" Width="1.5" PointX="9.75" PointY="5.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="PharmacyModel.Postavka" Width="1.5" PointX="7.5" PointY="4.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="PharmacyModel.Postavshik" Width="1.5" PointX="3" PointY="6.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="PharmacyModel.Preparat" Width="1.5" PointX="5.25" PointY="2.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="PharmacyModel.Shopping_history" Width="1.5" PointX="7.5" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PharmacyModel.Sklad" Width="1.5" PointX="7.75" PointY="13" IsExpanded="true" />
+        <EntityTypeShape EntityType="PharmacyModel.Sotrudnik" Width="1.5" PointX="3" PointY="10.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="PharmacyModel.sysdiagrams" Width="1.5" PointX="9.75" PointY="13" IsExpanded="true" />
+        <EntityTypeShape EntityType="PharmacyModel.Zakaz" Width="1.5" PointX="5.25" PointY="5" IsExpanded="true" />
+        <EntityTypeShape EntityType="PharmacyModel.Zapis_priem" Width="1.5" PointX="5.25" PointY="8" IsExpanded="true" />
+        <AssociationConnector Association="PharmacyModel.FK_Postavshik_Address" ManuallyRouted="false" />
+        <AssociationConnector Association="PharmacyModel.FK_Sotrudnik_Address" ManuallyRouted="false" />
+        <AssociationConnector Association="PharmacyModel.FK_Material_Oborudovanie_Category" ManuallyRouted="false" />
+        <AssociationConnector Association="PharmacyModel.FK_Postavshik_Contacts" ManuallyRouted="false" />
+        <AssociationConnector Association="PharmacyModel.FK_Postavshik_Dogovor" ManuallyRouted="false" />
+        <AssociationConnector Association="PharmacyModel.FK_Graphik_Sotrudnik" ManuallyRouted="false" />
+        <AssociationConnector Association="PharmacyModel.FK_Shopping_history_Klient" ManuallyRouted="false" />
+        <AssociationConnector Association="PharmacyModel.FK_Zapis_priem_Klient" ManuallyRouted="false" />
+        <AssociationConnector Association="PharmacyModel.FK_Material_Oborudovanie_Sklad" ManuallyRouted="false" />
+        <AssociationConnector Association="PharmacyModel.FK_Ostatok_preparat_Postavka" ManuallyRouted="false" />
+        <AssociationConnector Association="PharmacyModel.FK_Postavka_Preparat" ManuallyRouted="false" />
+        <AssociationConnector Association="PharmacyModel.FK_Postavka_Zakaz" ManuallyRouted="false" />
+        <AssociationConnector Association="PharmacyModel.FK_Zakaz_Postavshik" ManuallyRouted="false" />
+        <AssociationConnector Association="PharmacyModel.FK_Shopping_history_Preparat" ManuallyRouted="false" />
+        <AssociationConnector Association="PharmacyModel.FK_Zapis_priem_Sotrudnik" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

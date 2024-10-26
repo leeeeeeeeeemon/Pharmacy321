@@ -1,4 +1,5 @@
-﻿using Pharmacy.Pages.Admin;
+﻿using Pharmacy.Data;
+using Pharmacy.Pages.Admin;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -24,10 +25,12 @@ namespace Pharmacy.Windows
             _currentEmployee = sotrudnik;
             userName.Text = _currentEmployee.Surname + " " + _currentEmployee.Name;
             userProfession.Text = _currentEmployee.Doljnost;
-            MainFrame.Navigate(new MainPage());
+            
 
             if (sotrudnik.Doljnost == "Фармацевт")
             {
+                MainFrame.Navigate(new SalesPage());
+                MainPageTB.Visibility = Visibility.Collapsed;
                 AppointmentsTB.Visibility = Visibility.Collapsed;
                 StaffTB.Visibility = Visibility.Collapsed;
                 DeliveriesTB.Visibility = Visibility.Collapsed;
@@ -35,15 +38,21 @@ namespace Pharmacy.Windows
                 DeliveriesTB.Visibility = Visibility.Collapsed;
                 ReportsTB.Visibility = Visibility.Collapsed;
                 ContractsTB.Visibility = Visibility.Collapsed;
+                DeliversTB.Visibility= Visibility.Collapsed;
             } else if (sotrudnik.Doljnost == "Окулист" || sotrudnik.Doljnost == "Ортопед")
             {
+                MainFrame.Navigate(new AppointmentsPage(_currentEmployee));
+                MainPageTB.Visibility = Visibility.Collapsed;
                 StaffTB.Visibility = Visibility.Collapsed;
                 DeliveriesTB.Visibility = Visibility.Collapsed;
                 EquipmentTB.Visibility = Visibility.Collapsed;
                 DeliveriesTB.Visibility = Visibility.Collapsed;
                 ReportsTB.Visibility = Visibility.Collapsed;
                 ContractsTB.Visibility = Visibility.Collapsed;
-            }
+                SalesTB.Visibility = Visibility.Collapsed;
+                DeliversTB.Visibility = Visibility.Collapsed;
+            } else
+                MainFrame.Navigate(new MainPage(_currentEmployee));
         }
 
         private void Exit_Click(object sender, RoutedEventArgs e)
@@ -60,10 +69,10 @@ namespace Pharmacy.Windows
                 switch (textBlock.Text)
                 {
                     case "Главная":
-                        MainFrame.Navigate(new MainPage());
+                        MainFrame.Navigate(new MainPage(_currentEmployee));
                         break;
                     case "Записи к врачам":
-                        MainFrame.Navigate(new AppointmentsPage());
+                        MainFrame.Navigate(new AppointmentsPage(_currentEmployee));
                         break;
                     case "Сотрудники":
                         MainFrame.Navigate(new StaffPage());
@@ -90,7 +99,7 @@ namespace Pharmacy.Windows
                         MainFrame.Navigate(new ContractsPage());
                         break;
                     default:
-                        MainFrame.Navigate(new MainPage());
+                        MainFrame.Navigate(new MainPage(_currentEmployee));
                         break;
                 }
             }

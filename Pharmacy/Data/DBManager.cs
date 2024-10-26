@@ -60,6 +60,16 @@ namespace Pharmacy.Data
             return _context.Dogovor.ToList();
         }
 
+        public static List<Preparat> GetMedicines()
+        {
+            return _context.Preparat.ToList();
+        }
+
+        public static List<Shopping_history> GetSales()
+        {
+            return _context.Shopping_history.ToList();
+        }
+
         public static bool MakeAppointment(Zapis_priem appointment)
         {
             try

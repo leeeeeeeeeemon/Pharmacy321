@@ -50,7 +50,7 @@
 
         <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Center">
             <TextBlock Text="Врач:"/>
-            <ComboBox x:Name="DoctorComboBox" DisplayMemberPath="Surname" SelectedValuePath="Id" Width="200"/>
+            <ComboBox x:Name="DoctorComboBox" DisplayMemberPath="Surname" SelectedValuePath="Id" Width="200" SelectionChanged="DoctorComboBox_SelectionChanged"/>
         </StackPanel>
 
         <StackPanel Grid.Row="3" Orientation="Horizontal" HorizontalAlignment="Center">

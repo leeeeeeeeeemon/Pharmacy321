@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="Хранилище PharmacyModel" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+      <Schema Namespace="Хранилище PharmacyModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Address">
           <Key>
             <PropertyRef Name="Id" />
@@ -145,6 +145,16 @@
           <Property Name="Id_address" Type="int" />
           <Property Name="Password" Type="int" Nullable="false" />
         </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
+        </EntityType>
         <EntityType Name="Zakaz">
           <Key>
             <PropertyRef Name="Number" />
@@ -284,11 +294,11 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_Shopping_history_Ostatok_preparat">
-          <End Role="Ostatok_preparat" Type="Self.Ostatok_preparat" Multiplicity="0..1" />
+        <Association Name="FK_Shopping_history_Preparat">
+          <End Role="Preparat" Type="Self.Preparat" Multiplicity="0..1" />
           <End Role="Shopping_history" Type="Self.Shopping_history" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="Ostatok_preparat">
+            <Principal Role="Preparat">
               <PropertyRef Name="Id" />
             </Principal>
             <Dependent Role="Shopping_history">
@@ -359,6 +369,7 @@
           <EntitySet Name="Shopping_history" EntityType="Self.Shopping_history" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Sklad" EntityType="Self.Sklad" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Sotrudnik" EntityType="Self.Sotrudnik" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Zakaz" EntityType="Self.Zakaz" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Zapis_priem" EntityType="Self.Zapis_priem" Schema="dbo" store:Type="Tables" />
           <AssociationSet Name="FK_Graphik_Sotrudnik" Association="Self.FK_Graphik_Sotrudnik">
@@ -401,8 +412,8 @@
             <End Role="Klient" EntitySet="Klient" />
             <End Role="Shopping_history" EntitySet="Shopping_history" />
           </AssociationSet>
-          <AssociationSet Name="FK_Shopping_history_Ostatok_preparat" Association="Self.FK_Shopping_history_Ostatok_preparat">
-            <End Role="Ostatok_preparat" EntitySet="Ostatok_preparat" />
+          <AssociationSet Name="FK_Shopping_history_Preparat" Association="Self.FK_Shopping_history_Preparat">
+            <End Role="Preparat" EntitySet="Preparat" />
             <End Role="Shopping_history" EntitySet="Shopping_history" />
           </AssociationSet>
           <AssociationSet Name="FK_Sotrudnik_Address" Association="Self.FK_Sotrudnik_Address">
@@ -515,7 +526,6 @@
           <Property Name="Id_postavka" Type="Int32" Nullable="false" />
           <Property Name="Ostatok" Type="Int32" Nullable="false" />
           <NavigationProperty Name="Postavka" Relationship="Self.FK_Ostatok_preparat_Postavka" FromRole="Ostatok_preparat" ToRole="Postavka" />
-          <NavigationProperty Name="Shopping_history" Relationship="Self.FK_Shopping_history_Ostatok_preparat" FromRole="Ostatok_preparat" ToRole="Shopping_history" />
         </EntityType>
         <EntityType Name="Postavka">
           <Key>
@@ -556,6 +566,7 @@
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="Postavka" Relationship="Self.FK_Postavka_Preparat" FromRole="Preparat" ToRole="Postavka" />
+          <NavigationProperty Name="Shopping_history" Relationship="Self.FK_Shopping_history_Preparat" FromRole="Preparat" ToRole="Shopping_history" />
         </EntityType>
         <EntityType Name="Shopping_history">
           <Key>
@@ -566,7 +577,7 @@
           <Property Name="Id_preparat" Type="Int32" />
           <Property Name="Id_klient" Type="Int32" />
           <NavigationProperty Name="Klient" Relationship="Self.FK_Shopping_history_Klient" FromRole="Shopping_history" ToRole="Klient" />
-          <NavigationProperty Name="Ostatok_preparat" Relationship="Self.FK_Shopping_history_Ostatok_preparat" FromRole="Shopping_history" ToRole="Ostatok_preparat" />
+          <NavigationProperty Name="Preparat" Relationship="Self.FK_Shopping_history_Preparat" FromRole="Shopping_history" ToRole="Preparat" />
         </EntityType>
         <EntityType Name="Sklad">
           <Key>
@@ -592,6 +603,16 @@
           <NavigationProperty Name="Address" Relationship="Self.FK_Sotrudnik_Address" FromRole="Sotrudnik" ToRole="Address" />
           <NavigationProperty Name="Graphik" Relationship="Self.FK_Graphik_Sotrudnik" FromRole="Sotrudnik" ToRole="Graphik" />
           <NavigationProperty Name="Zapis_priem" Relationship="Self.FK_Zapis_priem_Sotrudnik" FromRole="Sotrudnik" ToRole="Zapis_priem" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
         </EntityType>
         <EntityType Name="Zakaz">
           <Key>
@@ -736,18 +757,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_Shopping_history_Ostatok_preparat">
-          <End Role="Ostatok_preparat" Type="Self.Ostatok_preparat" Multiplicity="0..1" />
-          <End Role="Shopping_history" Type="Self.Shopping_history" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Ostatok_preparat">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="Shopping_history">
-              <PropertyRef Name="Id_preparat" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_Postavka_Preparat">
           <End Role="Preparat" Type="Self.Preparat" Multiplicity="1" />
           <End Role="Postavka" Type="Self.Postavka" Multiplicity="*" />
@@ -784,6 +793,18 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_Shopping_history_Preparat">
+          <End Role="Preparat" Type="Self.Preparat" Multiplicity="0..1" />
+          <End Role="Shopping_history" Type="Self.Shopping_history" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Preparat">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Shopping_history">
+              <PropertyRef Name="Id_preparat" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_Zapis_priem_Sotrudnik">
           <End Role="Sotrudnik" Type="Self.Sotrudnik" Multiplicity="0..1" />
           <End Role="Zapis_priem" Type="Self.Zapis_priem" Multiplicity="*" />
@@ -811,6 +832,7 @@
           <EntitySet Name="Shopping_history" EntityType="Self.Shopping_history" />
           <EntitySet Name="Sklad" EntityType="Self.Sklad" />
           <EntitySet Name="Sotrudnik" EntityType="Self.Sotrudnik" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
           <EntitySet Name="Zakaz" EntityType="Self.Zakaz" />
           <EntitySet Name="Zapis_priem" EntityType="Self.Zapis_priem" />
           <AssociationSet Name="FK_Postavshik_Address" Association="Self.FK_Postavshik_Address">
@@ -853,10 +875,6 @@
             <End Role="Postavka" EntitySet="Postavka" />
             <End Role="Ostatok_preparat" EntitySet="Ostatok_preparat" />
           </AssociationSet>
-          <AssociationSet Name="FK_Shopping_history_Ostatok_preparat" Association="Self.FK_Shopping_history_Ostatok_preparat">
-            <End Role="Ostatok_preparat" EntitySet="Ostatok_preparat" />
-            <End Role="Shopping_history" EntitySet="Shopping_history" />
-          </AssociationSet>
           <AssociationSet Name="FK_Postavka_Preparat" Association="Self.FK_Postavka_Preparat">
             <End Role="Preparat" EntitySet="Preparat" />
             <End Role="Postavka" EntitySet="Postavka" />
@@ -868,6 +886,10 @@
           <AssociationSet Name="FK_Zakaz_Postavshik" Association="Self.FK_Zakaz_Postavshik">
             <End Role="Postavshik" EntitySet="Postavshik" />
             <End Role="Zakaz" EntitySet="Zakaz" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Shopping_history_Preparat" Association="Self.FK_Shopping_history_Preparat">
+            <End Role="Preparat" EntitySet="Preparat" />
+            <End Role="Shopping_history" EntitySet="Shopping_history" />
           </AssociationSet>
           <AssociationSet Name="FK_Zapis_priem_Sotrudnik" Association="Self.FK_Zapis_priem_Sotrudnik">
             <End Role="Sotrudnik" EntitySet="Sotrudnik" />
@@ -1034,6 +1056,17 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="PharmacyModel.sysdiagrams">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="definition" ColumnName="definition" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="Zakaz">
             <EntityTypeMapping TypeName="PharmacyModel.Zakaz">
               <MappingFragment StoreEntitySet="Zakaz">
@@ -1071,7 +1104,7 @@
         <DesignerProperty Name="ValidateOnBuild" Value="true" />
         <DesignerProperty Name="EnablePluralization" Value="false" />
         <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
-        <DesignerProperty Name="UseLegacyProvider" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
         <DesignerProperty Name="CodeGenerationStrategy" Value="Нет" />
       </DesignerInfoPropertySet>
     </Options>

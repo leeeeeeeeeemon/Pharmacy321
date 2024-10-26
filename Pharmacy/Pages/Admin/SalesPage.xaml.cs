@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Pharmacy.Data;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -15,14 +16,19 @@ using System.Windows.Shapes;
 
 namespace Pharmacy.Pages.Admin
 {
-    /// <summary>
-    /// Логика взаимодействия для SalesPage.xaml
-    /// </summary>
     public partial class SalesPage : Page
     {
+        private List<Shopping_history> _sales;
         public SalesPage()
         {
             InitializeComponent();
+            LoadSales();
+        }
+
+        private void LoadSales()
+        {
+            _sales = DBManager.GetSales();
+            SalesDataGrid.ItemsSource = _sales;
         }
     }
 }
