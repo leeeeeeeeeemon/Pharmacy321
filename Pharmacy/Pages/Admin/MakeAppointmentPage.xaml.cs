@@ -160,6 +160,8 @@ namespace Pharmacy.Pages.Admin
 
         private void DoctorComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
+            if (DoctorComboBox.SelectedItem == null) return;
+
             AppointmentTimeComboBox.SelectedItem = null;
 
             if (AppointmentDatePicker.SelectedDate != null)
